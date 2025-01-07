@@ -146,8 +146,8 @@ class ProxyConfig:
 
         # Minimum and maximum number of configurations per protocol
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 5,  # Minimum number of configurations per protocol
-            "max": 15  # Maximum number of configurations per protocol
+            "min": 300,  # Minimum number of configurations per protocol
+            "max": 300  # Maximum number of configurations per protocol
         }
 
         # Supported proxy protocols and their limits
@@ -161,24 +161,24 @@ class ProxyConfig:
         }
 
         # Minimum and maximum number of configurations fetched from each channel
-        self.MIN_CONFIGS_PER_CHANNEL = 5  # Minimum number of proxy configs required per channel
-        self.MAX_CONFIGS_PER_CHANNEL = 30  # Maximum number of proxy configs allowed per channel
+        self.MIN_CONFIGS_PER_CHANNEL = 300  # Minimum number of proxy configs required per channel
+        self.MAX_CONFIGS_PER_CHANNEL = 300  # Maximum number of proxy configs allowed per channel
         # Maximum age of configurations (in days)
-        self.MAX_CONFIG_AGE_DAYS = 7  # Discard configurations older than this many days
+        self.MAX_CONFIG_AGE_DAYS = 14  # Discard configurations older than this many days
         # Retry settings for fetching configurations
         self.CHANNEL_RETRY_LIMIT = 3  # Maximum number of retries if a channel fetch fails
-        self.CHANNEL_ERROR_THRESHOLD = 0.5  # Error threshold (e.g., 50%) to disable a channel
+        self.CHANNEL_ERROR_THRESHOLD = 4  # Error threshold (e.g., 50%) to disable a channel
 
         # Minimum ratio of configs required for a protocol to be considered valid
-        self.MIN_PROTOCOL_RATIO = 0.15  # Protocol must have at least 15% of all fetched configs
+        self.MIN_PROTOCOL_RATIO = 0.10  # Protocol must have at least 15% of all fetched configs
 
         self.OUTPUT_FILE = 'configs/proxy_configs.txt'
         self.STATS_FILE = 'configs/channel_stats.json'
 
         # HTTP request settings
-        self.MAX_RETRIES = 3  # Maximum retries for a failed HTTP request
-        self.RETRY_DELAY = 5  # Delay (in seconds) between retries
-        self.REQUEST_TIMEOUT = 30  # Timeout (in seconds) for HTTP requests
+        self.MAX_RETRIES = 1  # Maximum retries for a failed HTTP request
+        self.RETRY_DELAY = 2  # Delay (in seconds) between retries
+        self.REQUEST_TIMEOUT = 2  # Timeout (in seconds) for HTTP requests
 
         self.HEADERS = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
