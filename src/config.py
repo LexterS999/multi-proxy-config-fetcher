@@ -45,8 +45,10 @@ class ChannelConfig:
 
 class ProxyConfig:
     def __init__(self):
-        self.TELEGRAM_CHANNELS = [
- 	    ChannelConfig("https://t.me/s/astrovpn_official"),
+        # List of channels or URLs to fetch proxy configurations from
+        self.SOURCE_URLS = [
+            ChannelConfig("https://t.me/s/v2ray_free_conf"),
+            ChannelConfig("https://t.me/s/PrivateVPNs"),
             ChannelConfig("https://t.me/s/vpnfail_v2ray"),
             ChannelConfig("https://t.me/s/vpnkanfik"),
             ChannelConfig("https://t.me/s/vpnmega1"),
