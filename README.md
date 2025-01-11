@@ -33,7 +33,7 @@ Below is the real-time performance statistics of the configured sources (Telegra
 - Smart handling of base64-encoded configs (preserves original format)
 - Protocol-specific validation and verification
 - Automatically updates configs every hour
-- Validates config age (excludes configs older than 7 days)
+- Validates config age (excludes configs older than 14 days)
 - Removes duplicates
 - Real-time source performance monitoring
 - Automatic source health management
