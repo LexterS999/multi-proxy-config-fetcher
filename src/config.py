@@ -166,7 +166,7 @@ class ProxyConfig:
         self.MIN_CONFIGS_PER_CHANNEL = 3000  # Minimum number of proxy configs required per channel
         self.MAX_CONFIGS_PER_CHANNEL = 3000  # Maximum number of proxy configs allowed per channel
         # Maximum age of configurations (in days)
-        self.MAX_CONFIG_AGE_DAYS = 30  # Discard configurations older than this many days
+        self.MAX_CONFIG_AGE_DAYS = 90  # Discard configurations older than this many days
         # Retry settings for fetching configurations
         self.CHANNEL_RETRY_LIMIT = 6  # Maximum number of retries if a channel fetch fails
         self.CHANNEL_ERROR_THRESHOLD = 0.9  # Error threshold (e.g., 50%) to disable a channel
