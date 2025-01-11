@@ -22,7 +22,7 @@ Each source is scored based on four key metrics:
 - **Config Uniqueness (25%)**: Percentage of unique configs contributed.
 - **Response Time (15%)**: Server response time and availability.
 
-The overall score is calculated in real-time and updated hourly. Sources scoring below 30% are automatically disabled.
+The overall score is calculated in real-time. Sources scoring below 30% are automatically disabled.
 
 > **Note**: The sources listed are examples. You can easily modify the source list in `src/config.py` to use your preferred Telegram channels or other URLs. The performance metrics shown above are based on real-time monitoring of each source's reliability in providing valid configurations.
 
