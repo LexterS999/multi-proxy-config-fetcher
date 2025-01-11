@@ -172,9 +172,9 @@
         <text x="140" y="4200" text-anchor="end" class="row">v2rayvlp</text>
         <text x="660" y="4200" text-anchor="start" class="score">0.0% (S:0%)</text><rect x="150" y="4230" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4230" width="0.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="4250" text-anchor="end" class="row">vistav2ray</text>
-        <text x="660" y="4250" text-anchor="start" class="score">0.0% (S:0%)</text><rect x="150" y="4280" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4280" width="162.5" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="4250" text-anchor="start" class="score">0.0% (S:0%)</text><rect x="150" y="4280" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4280" width="160.39999999999998" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="4300" text-anchor="end" class="row">vpnfail_v2ray</text>
-        <text x="660" y="4300" text-anchor="start" class="score">32.5% (S:0%)</text><rect x="150" y="4330" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4330" width="0.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="4300" text-anchor="start" class="score">32.1% (S:0%)</text><rect x="150" y="4330" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4330" width="0.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="4350" text-anchor="end" class="row">alpha_v2ray_fazayi</text>
         <text x="660" y="4350" text-anchor="start" class="score">0.0% (S:0%)</text><rect x="150" y="4380" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="4380" width="0.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="4400" text-anchor="end" class="row">astrovpn_official</text>
