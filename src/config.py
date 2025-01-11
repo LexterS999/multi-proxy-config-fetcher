@@ -148,8 +148,8 @@ class ProxyConfig:
 
         # Minimum and maximum number of configurations per protocol
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 3000,  # Minimum number of configurations per protocol
-            "max": 3000   # Maximum number of configurations per protocol
+            "min": 6000,  # Minimum number of configurations per protocol
+            "max": 6000   # Maximum number of configurations per protocol
         }
 
         # Supported proxy protocols and their limits
@@ -163,16 +163,16 @@ class ProxyConfig:
         }
 
         # Minimum and maximum number of configurations fetched from each channel
-        self.MIN_CONFIGS_PER_CHANNEL = 3000  # Minimum number of proxy configs required per channel
-        self.MAX_CONFIGS_PER_CHANNEL = 3000  # Maximum number of proxy configs allowed per channel
+        self.MIN_CONFIGS_PER_CHANNEL = 6000  # Minimum number of proxy configs required per channel
+        self.MAX_CONFIGS_PER_CHANNEL = 6000  # Maximum number of proxy configs allowed per channel
         # Maximum age of configurations (in days)
-        self.MAX_CONFIG_AGE_DAYS = 90  # Discard configurations older than this many days
+        self.MAX_CONFIG_AGE_DAYS = 14  # Discard configurations older than this many days
         # Retry settings for fetching configurations
         self.CHANNEL_RETRY_LIMIT = 6  # Maximum number of retries if a channel fetch fails
         self.CHANNEL_ERROR_THRESHOLD = 0.9  # Error threshold (e.g., 50%) to disable a channel
 
         # Minimum ratio of configs required for a protocol to be considered valid
-        self.MIN_PROTOCOL_RATIO = 0.30  # Protocol must have at least 15% of all fetched configs
+        self.MIN_PROTOCOL_RATIO = 0.9  # Protocol must have at least 15% of all fetched configs
 
         self.OUTPUT_FILE = 'configs/proxy_configs.txt'
         self.STATS_FILE = 'configs/channel_stats.json'
