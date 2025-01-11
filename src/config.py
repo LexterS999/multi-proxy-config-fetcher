@@ -169,10 +169,10 @@ class ProxyConfig:
         self.MAX_CONFIG_AGE_DAYS = 30  # Discard configurations older than this many days
         # Retry settings for fetching configurations
         self.CHANNEL_RETRY_LIMIT = 6  # Maximum number of retries if a channel fetch fails
-        self.CHANNEL_ERROR_THRESHOLD = 0.7  # Error threshold (e.g., 50%) to disable a channel
+        self.CHANNEL_ERROR_THRESHOLD = 0.9  # Error threshold (e.g., 50%) to disable a channel
 
         # Minimum ratio of configs required for a protocol to be considered valid
-        self.MIN_PROTOCOL_RATIO = 0.19  # Protocol must have at least 15% of all fetched configs
+        self.MIN_PROTOCOL_RATIO = 0.30  # Protocol must have at least 15% of all fetched configs
 
         self.OUTPUT_FILE = 'configs/proxy_configs.txt'
         self.STATS_FILE = 'configs/channel_stats.json'
