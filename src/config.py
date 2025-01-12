@@ -235,8 +235,8 @@ class ProxyConfig:
 
         # Minimum and maximum number of configurations per protocol
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 6000,  # Minimum number of configurations per protocol
-            "max": 6000   # Maximum number of configurations per protocol
+            "min": 9000,  # Minimum number of configurations per protocol
+            "max": 9000   # Maximum number of configurations per protocol
         }
 
         # Supported proxy protocols and their limits
@@ -250,22 +250,22 @@ class ProxyConfig:
         }
 
         # Minimum and maximum number of configurations fetched from each channel
-        self.MIN_CONFIGS_PER_CHANNEL = 6000  # Minimum number of proxy configs required per channel
-        self.MAX_CONFIGS_PER_CHANNEL = 6000  # Maximum number of proxy configs allowed per channel
+        self.MIN_CONFIGS_PER_CHANNEL = 9000  # Minimum number of proxy configs required per channel
+        self.MAX_CONFIGS_PER_CHANNEL = 9000  # Maximum number of proxy configs allowed per channel
         # Maximum age of configurations (in days)
         self.MAX_CONFIG_AGE_DAYS = 14  # Discard configurations older than this many days
         # Retry settings for fetching configurations
-        self.CHANNEL_RETRY_LIMIT = 6  # Maximum number of retries if a channel fetch fails
+        self.CHANNEL_RETRY_LIMIT = 7  # Maximum number of retries if a channel fetch fails
         self.CHANNEL_ERROR_THRESHOLD = 0.9  # Error threshold (e.g., 50%) to disable a channel
 
         # Minimum ratio of configs required for a protocol to be considered valid
-        self.MIN_PROTOCOL_RATIO = 0.9  # Protocol must have at least 15% of all fetched configs
+        self.MIN_PROTOCOL_RATIO = 1.6  # Protocol must have at least 15% of all fetched configs
 
         self.OUTPUT_FILE = 'configs/proxy_configs.txt'
         self.STATS_FILE = 'configs/channel_stats.json'
 
         # HTTP request settings
-        self.MAX_RETRIES = 3  # Maximum retries for a failed HTTP request
+        self.MAX_RETRIES = 7  # Maximum retries for a failed HTTP request
         self.RETRY_DELAY = 2  # Delay (in seconds) between retries
         self.REQUEST_TIMEOUT = 2  # Timeout (in seconds) for HTTP requests
 
