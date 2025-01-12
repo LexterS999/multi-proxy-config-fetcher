@@ -46,7 +46,7 @@ class ChannelConfig:
 class ProxyConfig:
     def __init__(self):
         # List of channels or URLs to fetch proxy configurations from
-        self.SOURCE_URLS = list({
+        self.SOURCE_URLS = list[
             ChannelConfig("https://t.me/s/v2ray_free_conf"),
             ChannelConfig("https://t.me/s/v2Source"),
             ChannelConfig("https://t.me/s/oneclickvpnkeys"),
