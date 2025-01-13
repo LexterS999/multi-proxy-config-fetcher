@@ -47,6 +47,9 @@ class ChannelConfig:
         self.metrics.overall_score = reliability_score + quality_score + uniqueness_score + response_score
 
 # Main configuration class for the proxy fetcher
+class ProxyConfig:
+    def __init__(self):
+        # List of channels or URLs to fetch proxy configurations from
         self.SOURCE_URLS = [
             ChannelConfig("https://t.me/s/v2ray_free_conf"),
             ChannelConfig("https://t.me/s/v2Source"),
