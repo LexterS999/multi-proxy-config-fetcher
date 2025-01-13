@@ -32,12 +32,6 @@ class ChannelConfig:
 class ProxyConfig:
     def __init__(self):
         self.SOURCE_URLS = [
-            ChannelConfig("https://github.com/Epodonios/v2ray-configs/raw/main/Configs_TLS.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/main/reality.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
-            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/reality"),
-            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/vless"),
-            ChannelConfig("https://github.com/Vauth/node/raw/main/Main"),
             ChannelConfig("https://t.me/s/v2ray_free_conf"),
             ChannelConfig("https://t.me/s/ShadowProxy66"),
             ChannelConfig("https://t.me/s/OutlineReleasedKey"),
