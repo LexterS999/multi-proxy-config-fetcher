@@ -4,11 +4,17 @@
 //support-url: https://t.me/BXAMbot
 //profile-web-page-url: https://github.com/4n0nymou3
 
+wireguard://0KXxafjAAfrNi5TvC2S4ntOOYj%2BF7Y9NR%2Fjnpt2GHHs%3D@188.114.99.41:8854?address=172.16.0.2%2F32&reserved=7%2C50%2C94&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280&keepalive=5&wnoise=quic&wnoisecount=15&wnoisedelay=1&wpayloadsize=5-10#HELI 2025-01-13 10:02🆔️ @Antifilterjadid 🆔️ @Antifilterjadid3 ⭕️⭕️
+
+wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#%40V2ray1_Ng
+
+wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#@V2RAYVlP
+
+wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#⚡Telegram = @SOSkeyNET
+
 hysteria2://%40VPNHubMaRKeT@202.78.166.190:443?security=tls&obfs=salamander&obfs-password=%40VPNHubMaRKeT&insecure=1&sni=www.google.com#%F0%9F%87%A9%F0%9F%87%AA%20%40VPNHubMaRKeT%20%E2%99%BE @VpnHubMarKeT ⚡️
 
 hysteria2://%40VPNHubMaRKeT@202.78.166.190:443?security=tls&obfs=salamander&obfs-password=%40VPNHubMaRKeT&insecure=1&sni=www.google.com#%F0%9F%87%A9%F0%9F%87%AA%20%40VPNHubMaRKeT%20%E2%99%BE@VpnHubMarKeT ⚡️
-
-hysteria2://123456@192.3.85.237:443?security=tls&insecure=1&sni=bing.com#IR-%40V2ray_Alpha-4
 
 hysteria2://1c0b8d7b-5617-4a07-acd2-315da2340ec9@209.141.42.49:443?security=tls&insecure=1&mport=50000-53000&sni=www.bing.com#Ir-%40V2ray_Alpha-3
 
@@ -18,13 +24,7 @@ hysteria2://1c0b8d7b-5617-4a07-acd2-315da2340ec9@209.141.42.49:443?security=tls&
 
 hysteria2://1c0b8d7b-5617-4a07-acd2-315da2340ec9@209.141.42.49:443?security=tls&insecure=1&mport=50000-53000&sni=www.bing.com#MCI-%40V2ray_Raha-6
 
-wireguard://0KXxafjAAfrNi5TvC2S4ntOOYj%2BF7Y9NR%2Fjnpt2GHHs%3D@188.114.99.41:8854?address=172.16.0.2%2F32&reserved=7%2C50%2C94&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280&keepalive=5&wnoise=quic&wnoisecount=15&wnoisedelay=1&wpayloadsize=5-10#HELI 2025-01-13 10:02🆔️ @Antifilterjadid 🆔️ @Antifilterjadid3 ⭕️⭕️
-
-wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#%40V2ray1_Ng
-
-wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#@V2RAYVlP
-
-wireguard://2Cd3AZEeoz4JA%2Box2hRcjgEpPUqDnVOkMOvKNEB33Hc%3D@162.159.192.15:943?address=172.16.0.2%2F32%2C2606%3A4700%3A110%3A863e%3A3ca4%3Ac194%3Ae5f3%3Afcc9%2F128&presharedkey=&reserved=31%2C46%2C24&publickey=bmXOC%2BF1FxEMF9dyiK2H5%2F1SUtzH0JuVo51h2wPfgyo%3D&mtu=1280#⚡Telegram = @SOSkeyNET
+hysteria2://2a1a0537-717c-402e-8e4f-7e81369997bd@jpzl2.stardad.lol:48512?security=tls&insecure=1&sni=https%3A%2F%2Fbing.com#All-%40V2ray_Alpha-2
 
 vless://%40v2boxvpnn@91.107.158.170:51001?security=reality&encryption=none&pbk=FP0MhqOGjuW4vBm-V8tyaLZW0VRIFxkhUP1p0oCwgU4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=mmd.10.isovpn.shop#%40nofiltering2%F0%9F%87%AB%F0%9F%87%AE
 
@@ -52,57 +52,29 @@ vless://-V2RAXX-@EXPRESSVPN_420.fastly80-3.hosting-ip.com:80?path=%2FTelegram%2C
 
 vless://-V2RAXX-@EXPRESSVPN_420.fastly80-3.hosting-ip.com:80?path=%2FTelegram%2CV2RAXX%2CTelegram%2C%3Fed%3D2048&security=none&encryption=none&host=V2RAXX.ir&type=ws#%40gh_v2rayng%20ALL
 
-trojan://%27s1T%3BTI7uZONi%5DON@104.17.147.22:8443?security=tls&sni=uhodfgJfD-RFGoHfDGf88-rFGOs.PAgEs.Dev&type=ws&host=uhodfgjfd-rfgohfdgf88-rfgos.pages.dev&path=%2FtrHCkeyRTzbTBbfcBq%3Fed%3D2560&fp=randomized&alpn=h2%2Chttp%2F1.1# TR-WS-TLS ‍☠️ NA-104.17.147.22:8443
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206WVRnNU1EbGxOak0yTW1Vd05EWXpZamd3WVdKbE1qWmxORFV3T0dNNFpEZz06WVRKbFpqRmhPR1V6TkRkbE5HUmpOR0V4Wm1aa1pUbGlNV1ZpWldGbU5qTT0%3D@hdfyrplcpnl1.freeairlians.com:59461#Moftinet%20Free%20Config
+
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206WldNelpXWTFNVGhqT0RjMU5ERTVOVGhrT1RGbFpXRmlaREl5TkRSak4yWT06TVRJMVpHUmlaV1V3WlRFeE5EUmxaVGt4WVRaaE5qWmhOekUzT0dFeVpXST0%3D@mn9w9jjta0aa.libreone.com:39969#%5B%F0%9F%87%A9%F0%9F%87%AA%5D%F0%9D%90%A3%F0%9D%90%A8%F0%9D%90%A2%F0%9D%90%A7%F0%93%84%82%F0%93%86%83%20%40v2rayngrit
+
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206Z2RDZzlGQWZXSmt1L2dndHJ6NGFwZUtPMGV2ZHVOcHVvMi83TUw2NFpZaz06MHI5ZGc4K05OZFZmVU5kSDI4YW94UUtCRHNaMXFRYzIrWEdKSnlGOE1IWT0@mopl.v2try.sbs:32062?type=tcp#ip%20v6%20%F0%9F%87%A9%F0%9F%87%AA%205-abftpxy1
+
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206Z2RDZzlGQWZXSmt1L2dndHJ6NGFwZUtPMGV2ZHVOcHVvMi83TUw2NFpZaz06MjlSOTJNTlEzM0FERXRQam5vdzhlL0FqbmttUGJ5cmRaSS9JRWhJUUYxbz0@mopl.v2try.sbs:32062?type=tcp#ip%20v6%20%F0%9F%87%A9%F0%9F%87%AA%205-99wirpfo
 
 trojan://%27s1T%3BTI7uZONi%5DON@104.17.148.22:8443?allowInsecure=0&sni=uhodfgJfD-RFGoHfDGf88-rFGOs.PAgEs.Dev&ws=1&wspath=%2FtrHCkeyRTzbTBbfcBq%3Fed%3D2560#@Hope_Net-join-us-on-Telegram
 
 trojan://03793bc4-e0e9-4527-b0ff-8fe1ce7aaf3d@172.67.171.49:443?path=%2F&security=tls&host=us1.trojanvpn.xyz&type=ws&sni=us1.trojanvpn.xyz#%40hopev2ray%F0%9F%92%9C
 
-trojan://03793bc4-e0e9-4527-b0ff-8fe1ce7aaf3d@172.67.171.49:443?security=tls&sni=us1.trojanvpn.xyz&type=ws&host=us1.trojanvpn.xyz&path=%2F# TR-WS-TLS ‍☠️ NA-172.67.171.49:443
-
-trojan://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@151.101.194.228:443?security=tls&sni=pscresearch.faculty.ucdavis.edu&type=ws&host=ihrcxextyuj.com&path=ws%2F%3Fed%3D2048# TR-WS-TLS 🇺🇸 US-151.101.194.228:443
-
-trojan://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@151.101.66.228:443?security=tls&sni=pscresearch.faculty.ucdavis.edu&type=ws&host=ihrcxextyuj.com&path=ws%2F%3Fed%3D2048# TR-WS-TLS 🇺🇸 US-151.101.66.228:443
-
-trojan://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@pscresearch.faculty.ucdavis.edu:443?path=ws%2F%3Fed%3D2048&security=tls&encryption=none&host=ihrcxextyuj.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#IR-%40V2ray_Alpha-20
-
 trojan://05742120-ce23-4cc8-88f5-6d221ce45bf4@129.146.242.130:443?security=tls#⚜️Telegram:@IP_CF••••••••••••••••••••••••••••••••••• Channel : @IP_CF_Config Main Channel : @IP_CF•••••••••••••••••••••••••••••••••••
-
-trojan://0792bb58-36ac-451e-a629-e363e53da93b@172.67.180.67:443?security=tls&sni=kafka.eula.cloudns.org&type=ws&host=kafka.eula.cloudns.org&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2048&fp=random&alpn=http%2F1.1# TR-WS-TLS ‍☠️ NA-172.67.180.67:443
 
 trojan://08964210-e7b8-11ec-95aa-1239d0255272@w12.udpgw.com:443?security=tls#⚜️Telegram:@IP_CF••••••••••••••••••••••••••••••••••• Channel : @IP_CF_Config Main Channel : @IP_CF•••••••••••••••••••••••••••••••••••
 
 trojan://093cee70-ceb9-11ef-9a9f-1239d0255272@uk1.test3.net:443?security=tls&headerType=none&type=tcp#%40hopev2ray%F0%9F%92%9A
-
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@104.16.192.1:443?security=tls&sni=sherasheba.com&type=tcp# TR-TCP-TLS ‍☠️ NA-104.16.192.1:443
-
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@104.17.147.11:443?security=tls&sni=jobscareerfortoday.com&type=tcp# TR-TCP-TLS ‍☠️ NA-104.17.147.11:443
-
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.59.119.143:443?security=tls&sni=connectwithemployers.online#%F0%9F%87%B8%F0%9F%87%ACSG-139.59.119.143-0519
-
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@139.59.119.143:443?security=tls&sni=connectwithemployers.online&type=tcp&allowInsecure=1# TR-TCP-TLS 🇸🇬 SG-139.59.119.143:443
-
-trojan://1187ba87-8ebc-4a07-aa89-b331ed2cb356@172.66.47.147:443?security=tls&sni=meti-u9d.pages.dev&type=ws&host=meti-u9d.pages.dev# TR-WS-TLS ‍☠️ NA-172.66.47.147:443
-
-trojan://15c33952@152.67.228.132:443?security=tls&sni=sj.5216818.xyz&allowInsecure=1# TR-TCP-TLS 🇺🇸 US-152.67.228.132:443
-
-trojan://15f34214-d8de-41e9-ba72-93daeafc59ef@104.18.32.47:2087?security=tls&sni=subhiddify.mmdv2.host&type=ws&host=subhiddify.mmdv2.host&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560# TR-WS-TLS ‍☠️ NA-104.18.32.47:2087
-
-trojan://15f34214-d8de-41e9-ba72-93daeafc59ef@172.64.155.209:2087?security=tls&sni=subhiddify.mmdv2.host&type=ws&host=subhiddify.mmdv2.host&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560# TR-WS-TLS ‍☠️ NA-172.64.155.209:2087
-
-trojan://1b3b276f-44b4-4c39-bfdf-67ff6337b41f@104.18.32.69:443?security=tls&sni=POOrIaREd--persEPolIS.pAGEs.Dev&type=ws&host=poORiaReD--PErsePOlIs.PagES.DEv# TR-WS-TLS ‍☠️ NA-104.18.32.69:443
-
-trojan://1e9aadae-ca17-4f75-b0a0-7de5e3858cfb@185.18.250.117:443?security=tls&sni=xN----PMcNAAC0DKn0Rb71nDa.PAges.Dev&type=ws&host=xn----pmcnaac0dkn0rb71nda.pages.dev&path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560# TR-WS-TLS 🇨🇭 CH-185.18.250.117:443
-
-trojan://23d58330-ceb8-11ef-af55-1239d0255272@51.210.182.170:443?security=tls&sni=fr1.test3.net&type=ws&host=fr1.test3.net&path=%2Fhowdy# TR-WS-TLS 🇫🇷 FR-51.210.182.170:443
 
 trojan://23d58330-ceb8-11ef-af55-1239d0255272@fr1.test3.net:443?path=%2Fhowdy&security=tls&host=fr1.test3.net&type=ws&sni=fr1.test3.net#%40V2ray1_Ng
 
 trojan://23d58330-ceb8-11ef-af55-1239d0255272@fr1.test3.net:443?path=%2Fhowdy&security=tls&host=fr1.test3.net&type=ws&sni=fr1.test3.net#%40hopev2ray
 
 trojan://23d58330-ceb8-11ef-af55-1239d0255272@fr1.test3.net:443?security=tls&headerType=none&type=tcp&sni=zula.ir#%40hopev2ray%E2%99%A5%EF%B8%8F
-
-trojan://242a3d8eee5e4ed1a6bfa4141d549a25@104.19.159.12:443?security=tls&sni=jobscareertoday.com&type=ws&host=jobscareertoday.com&path=%2F6b777a91# TR-WS-TLS ‍☠️ NA-104.19.159.12:443
 
 trojan://243eab52-9ac1-405c-887c-eb112c0985b8@74.226.136.204:443?allowInsecure=0&sni=us02.trojanyyds.xyz#@Hope_Net-join-us-on-Telegram
 
@@ -111,8 +83,6 @@ trojan://243eab52-9ac1-405c-887c-eb112c0985b8@74.226.136.204:443?allowInsecure=1
 trojan://243eab52-9ac1-405c-887c-eb112c0985b8@74.226.136.204:443?security=tls&headerType=&type=tcp&sni=in01.trojanyyds.xyz#%F0%9F%87%BA%F0%9F%87%B8%7CUS%7C%E7%BE%8E%E5%9B%BD%7C%40wxgqlfx%7C155
 
 trojan://243eab52-9ac1-405c-887c-eb112c0985b8@74.226.136.204:443?security=tls&headerType=&type=tcp&sni=tw02.trojanyyds.xyz#%F0%9F%87%BA%F0%9F%87%B8%7CUS%7C%E7%BE%8E%E5%9B%BD%7C%40wxgqlfx%7C64
-
-trojan://243eab52-9ac1-405c-887c-eb112c0985b8@74.226.136.204:443?security=tls&sni=sg01.trojanyyds.xyz&type=tcp# TR-TCP-TLS 🇯🇵 JP-74.226.136.204:443
 
 trojan://243eab52-9ac1-405c-887c-eb112c0985b8@in01.trojanyyds.xyz:443?security=tls&headerType=&type=tcp&sni=in01.trojanyyds.xyz#%F0%9F%87%BA%F0%9F%87%B8%7CUS%7C%E7%BE%8E%E5%9B%BD%7C%40wxgqlfx%7C60
 
@@ -136,37 +106,67 @@ trojan://243eab52-9ac1-405c-887c-eb112c0985b8@us01.trojanyyds.xyz:443?type=tcp&s
 
 trojan://243eab52-9ac1-405c-887c-eb112c0985b8@us01.trojanyyds.xyz:443?type=tcp&security=tls&sni=us01.trojanyyds.xyz&allowInsecure=1#%F0%9F%87%AF%F0%9F%87%B5_%E5%AE%9A%E5%88%B6%E4%B8%93%E7%BA%BF%EF%BC%9A%40QS00008
 
-trojan://24f7f8e5-dbe5-4cde-e018-2b74a00b6d69@57.128.178.253:443?security=tls&sni=en.linceedab.com&type=tcp&fp=chrome&alpn=h2%2Chttp%2F1.1&allowInsecure=1# TR-TCP-TLS 🇫🇷 FR-57.128.178.253:443
-
-trojan://24f7f8e5-dbe5-4cde-e018-2b74a00b6d69@en.linceedab.com:443?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp#IR-%40V2ray_Alpha-6
-
-trojan://25a0ffa0-725c-4d6f-b0d5-c74579753075@103.173.66.155:443?security=tls&headerType=none&type=tcp#IR-%40V2ray_Alpha-05
-
-trojan://25a0ffa0-725c-4d6f-b0d5-c74579753075@103.173.66.155:443?security=tls&headerType=none&type=tcp#IR-%40V2ray_Alpha-2
-
-trojan://25a0ffa0-725c-4d6f-b0d5-c74579753075@103.173.66.155:443?security=tls&sni=Cmc3.5gsieuvip.vn&type=tcp&allowInsecure=1# TR-TCP-TLS 🇻🇳 VN-103.173.66.155:443
-
-trojan://25a0ffa0-725c-4d6f-b0d5-c74579753075@Cmc3.5gsieuvip.vn:443?security=tls&headerType=none&type=tcp#IR-%40V2ray_Alpha-3
-
-trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@91.195.240.12:443?security=tls&sni=ca.liangyuandiancloud.com&type=tcp&allowInsecure=1# TR-TCP-TLS 🇩🇪 DE-91.195.240.12:443
-
 trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@ca.liangyuandiancloud.com:443?security=tls&headerType=&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%7CDE%7C%E5%BE%B7%E5%9B%BD%7C%40wxgqlfx%7C70
 
-ss://022404e1-6083-48e1-beee-9048dda539bc@bwdraper.faculty.ucdavis.edu:443?path=%2F%3Fed%3D1024&security=tls&encryption=none&host=Cloud.majidpin.com&fp=chrome&type=ws&sni=bwdraper.faculty.ucdavis.edu#%40MehradLearn+%7C+%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D9%87%D8%A7%DB%8C+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1`
+trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@chjs.liangyuandiancloud.com:443?security=tls&headerType=&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%7CDE%7C%E5%BE%B7%E5%9B%BD%7C%40wxgqlfx%7C72
 
-ss://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@pscresearch.faculty.ucdavis.edu:443?path=ws%2F%3Fed%3D2048&security=tls&encryption=none&host=ihrcxextyuj.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D9%85%D8%A7+%D8%AF%D8%B1+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%3A+V2rayng_Fast%40`
+trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@in.liangyuandiancloud.com:443?security=tls&headerType=&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%7CDE%7C%E5%BE%B7%E5%9B%BD%7C%40wxgqlfx%7C71
 
-ss://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@pscresearch.faculty.ucdavis.edu:443?path=ws%2F%3Fed%3D2048&security=tls&encryption=none&host=ihrcxextyuj.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#IR-%40V2ray_Alpha-20
+trojan://272cd64a-9f71-4e08-8fbd-0988d7fa99c8@uk.liangyuandiancloud.com:443?security=tls&headerType=&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%7CDE%7C%E5%BE%B7%E5%9B%BD%7C%40wxgqlfx%7C73
 
-ss://04c924c7-551e-4c67-b3fa-9cca9e8cdc78@pscresearch.faculty.ucdavis.edu:443?path=ws%2F%3Fed%3D2048&security=tls&encryption=none&host=ihrcxextyuj.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#MCI-%40V2ray_Alpha-10
+trojan://2b4b4090-ceb7-11ef-9292-1239d0255272@fr1.test3.net:443?security=tls&headerType=none&type=tcp#%40hopev2ray%F0%9F%A7%A1❌برای اتصال باید حتما تیک allowlnsecure فعال شود وگرنه وصل نمی شود.خرید کانفیگ اختصاصی @hopev2ray
 
-vmess://ewogICAgImFkZCI6ICI1MS43Ny4yMC4xMzIiLAogICAgImFpZCI6IDAsCiAgICAiaG9zdCI6ICJhLmJhcmFkaWhhLmNvbSIsCiAgICAiaWQiOiAiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2xpbmt2d3MiLAogICAgInBvcnQiOiA0NDMsCiAgICAicHMiOiAi8J+HrPCfh6dHQi01MS43Ny4yMC4xMzItMjg3OCIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9
+trojan://3169fbd0-c85d-11ef-807b-1239d0255272@uk1.test3.net:443?security=tls&headerType=none&type=tcp&sni=zula.ir#%40V2ray1_Ngسرعت پایدار @IrV2rey
+
+trojan://3169fbd0-c85d-11ef-807b-1239d0255272@uk1.test3.net:443?security=tls&headerType=none&type=tcp&sni=zula.ir#%40V2ray1_Ngنامحدود ۲۴ ساعته 🇮🇷@Irv2rey
+
+trojan://3169fbd0-c85d-11ef-807b-1239d0255272@uk1.test3.net:443?security=tls&headerType=none&type=tcp&sni=zula.ir#%40hopev2ray%F0%9F%92%96
+
+trojan://3169fbd0-c85d-11ef-807b-1239d0255272@uk1.test3.net:443?security=tls&headerType=none&type=tcp&sni=zula.ir#%40kingofilter@kingofilter
+
+trojan://34ec6bdf-602c-4bbe-933a-5c0823524201@103.152.164.39:443?security=tls&headerType=&type=tcp#%F0%9F%87%BB%F0%9F%87%B3%7CVN%7C%E8%B6%8A%E5%8D%97%7C%40wxgqlfx%7C121
+
+trojan://34ec6bdf-602c-4bbe-933a-5c0823524201@103.152.164.39:443?security=tls&headerType=&type=tcp#%F0%9F%87%BB%F0%9F%87%B3%7CVN%7C%E8%B6%8A%E5%8D%97%7C%40wxgqlfx%7C25
+
+trojan://3648425794742788096@5.8.35.208:443?security=tls&headerType=&type=tcp&sni=loving-boa.treefrog761.one#%F0%9F%87%B3%F0%9F%87%B1%7CNL%7C%E8%8D%B7%E5%85%B0%7C%40wxgqlfx%7C159
+
+trojan://3648425794742788096@5.8.35.208:443?security=tls&headerType=&type=tcp&sni=loving-boa.treefrog761.one#%F0%9F%87%B3%F0%9F%87%B1%7CNL%7C%E8%8D%B7%E5%85%B0%7C%40wxgqlfx%7C188
+
+trojan://3723507166611775488@109.61.16.83:443?security=tls&headerType=&type=tcp&sni=profound-elk.boa152.lol#%F0%9F%87%AD%F0%9F%87%BA%7CHU%7C%E5%8C%88%E7%89%99%E5%88%A9%7C%40wxgqlfx%7C149
+
+trojan://3723507166611775488@109.61.16.83:443?security=tls&headerType=&type=tcp&sni=profound-elk.boa152.lol#%F0%9F%87%AD%F0%9F%87%BA%7CHU%7C%E5%8C%88%E7%89%99%E5%88%A9%7C%40wxgqlfx%7C89
+
+trojan://3723507166611775488@154.205.151.46:443?security=tls&headerType=&type=tcp&sni=settled-seal.treefrog761.one#%F0%9F%87%A8%F0%9F%87%B3%7CCN%7C%E4%B8%AD%E5%9B%BD%7C%40wxgqlfx%7C97
+
+trojan://3723507166611775488@195.133.93.10:443?security=tls&headerType=none&type=tcp&sni=social-bream.boa152.lol#WiFi-%40V2ray_Alpha-15
+
+trojan://3723507166611775488@195.133.93.10:443?security=tls&headerType=none&type=tcp&sni=social-bream.boa152.lol#WiFi-%40V2ray_Raha-15⭕️ خرید سرور اختصــاصـی حجم : نامحدود تا زمان فیلترشدن☄️ آپدیت V2rayNG الزامی است ᏒahaV2Ꮢay ➖➖➖➖➖➖ Android نحوه اتصال iOS +14 نحوه اتصال Windows نحوه اتصال
+
+trojan://3723507166611775488@195.133.93.10:443?type=tcp&security=tls&sni=social-bream.boa152.lol&allowInsecure=1#%F0%9F%87%B7%F0%9F%87%BA_%E5%AE%9A%E5%88%B6%E4%B8%93%E7%BA%BF%EF%BC%9A%40Alin006Bot
+
+trojan://3723507166611775488@195.133.93.10:443?type=tcp&security=tls&sni=social-bream.boa152.lol&allowInsecure=1#%F0%9F%87%B7%F0%9F%87%BA_%E5%AE%9A%E5%88%B6%E4%B8%93%E7%BA%BF%EF%BC%9A%40QS00008
+
+trojan://3723507166611775488@195.133.93.135:443?security=tls&headerType=&type=tcp&sni=pleased-airedale.boa152.lol#%F0%9F%87%B7%F0%9F%87%BA%7CRU%7C%E4%BF%84%E7%BD%97%E6%96%AF%7C%40wxgqlfx%7C56
+
+trojan://3723507166611775488@195.133.93.221:443?security=tls&headerType=none&type=tcp&sni=fitting-ox.boa152.lol#%C2%AE%EF%B8%8F%F0%9F%91%B9%F0%9F%87%A8%F0%9F%87%BE%F0%9F%87%A8%F0%9F%87%BE_%20%40freeconfig01
+
+trojan://3723507166611775488@195.133.93.234:443?security=tls&headerType=&type=tcp&sni=wise-cowbird.boa152.lol#%F0%9F%87%B7%F0%9F%87%BA%7CRU%7C%E4%BF%84%E7%BD%97%E6%96%AF%7C%40wxgqlfx%7C31
+
+trojan://3723507166611775488@3.78.184.1:443?security=tls&headerType=&type=tcp&sni=golden-krill.treefrog761.one#%F0%9F%87%BA%F0%9F%87%B8%7CUS%7C%E7%BE%8E%E5%9B%BD%7C%40wxgqlfx%7C121
+
+trojan://3723507166611775488@3.78.184.1:443?security=tls&headerType=&type=tcp&sni=golden-krill.treefrog761.one#%F0%9F%87%BA%F0%9F%87%B8%7CUS%7C%E7%BE%8E%E5%9B%BD%7C%40wxgqlfx%7C159
+
+trojan://3723507166611775488@5.189.203.39:443?security=tls&headerType=none&type=tcp&sni=lucky-grouper.boa152.lol#Channel%20id%3A%20%40ShadowProxy66%20 Country: United States 🇺🇸 Region: New York City: Buffalo Zip Code: 14205 ISP: ColoCrossing
+
+trojan://3723507166611775488@62.112.221.46:443?security=tls&headerType=&type=tcp&sni=boss-hound.boa152.lol#%F0%9F%87%AD%F0%9F%87%BA%7CHU%7C%E5%8C%88%E7%89%99%E5%88%A9%7C%40wxgqlfx%7C116
 
 vmess://ewogICAgImFkZCI6ICI1Ny4xMjkuMjUuMjAiLAogICAgImFpZCI6IDEsCiAgICAiaG9zdCI6ICI1Ny4xMjkuMjUuMjAiLAogICAgImlkIjogIjAzZmNjNjE4LWI5M2QtNjc5Ni02YWVkLThhMzhjOTc1ZDU4MSIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogImxpbmt2d3MiLAogICAgInBvcnQiOiA0NDMsCiAgICAicHMiOiAi8J+HqfCfh6pERS01Ny4xMjkuMjUuMjAtMTI3MSIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9
 
 vmess://ewogICAgImFkZCI6ICI2OC4xNjguMzEuMTk2IiwKICAgICJhaWQiOiAwLAogICAgImhvc3QiOiAiNjguMTY4LjMxLjE5NiIsCiAgICAiaWQiOiAiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwKICAgICJuZXQiOiAid3MiLAogICAgInBhdGgiOiAiL2xpbmt2d3MiLAogICAgInBvcnQiOiA0NDMsCiAgICAicHMiOiAi8J+HrPCfh6dHQi02OC4xNjguMzEuMTk2LTI4NzMiLAogICAgInRscyI6ICJ0bHMiLAogICAgInR5cGUiOiAiYXV0byIsCiAgICAic2VjdXJpdHkiOiAiYXV0byIsCiAgICAic2tpcC1jZXJ0LXZlcmlmeSI6IHRydWUsCiAgICAic25pIjogIiIKfQ==
 
 vmess://ewogICAgImFkZCI6ICIxNDguMTM1LjMxLjYxIiwKICAgICJhaWQiOiA2NCwKICAgICJob3N0IjogInd3dy43NzYzMjg0OS54eXoiLAogICAgImlkIjogIjQxODA0OGFmLWEyOTMtNGI5OS05YjBjLTk4Y2EzNTgwZGQyNCIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9wYXRoLzE3MzY2NzU1NzE0MTAiLAogICAgInBvcnQiOiAzMTAwNSwKICAgICJwcyI6ICLwn4e68J+HuFVTLTE0OC4xMzUuMzEuNjEtMTQ1MCIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9
+
+vmess://ewogICAgImFkZCI6ICIxOTguMi4xOTIuMjQ5IiwKICAgICJhaWQiOiA2NCwKICAgICJob3N0IjogInd3dy44NDE2MzAwNy54eXoiLAogICAgImlkIjogIjQxODA0OGFmLWEyOTMtNGI5OS05YjBjLTk4Y2EzNTgwZGQyNCIsCiAgICAibmV0IjogIndzIiwKICAgICJwYXRoIjogIi9wYXRoLzE3MzY2NzUxODQ4MDUiLAogICAgInBvcnQiOiAzNjAwOSwKICAgICJwcyI6ICLwn4e68J+HuFVTLTE5OC4yLjE5Mi4yNDktMTQ2MCIsCiAgICAidGxzIjogInRscyIsCiAgICAidHlwZSI6ICJhdXRvIiwKICAgICJzZWN1cml0eSI6ICJhdXRvIiwKICAgICJza2lwLWNlcnQtdmVyaWZ5IjogdHJ1ZSwKICAgICJzbmkiOiAiIgp9
 
 vmess://ewogICAgImFkZCI6ICIxOTguMjAwLjQ4LjI0OCIsCiAgICAiYWlkIjogNjQsCiAgICAiaG9zdCI6ICJ3d3cuMjMzNTUyOTIueHl6IiwKICAgICJpZCI6ICI0MTgwNDhhZi1hMjkzLTRiOTktOWIwYy05OGNhMzU4MGRkMjQiLAogICAgIm5ldCI6ICJ3cyIsCiAgICAicGF0aCI6ICIvcGF0aC8xNzM2NDE1Njc1MDM0IiwKICAgICJwb3J0IjogMzcwMDYsCiAgICAicHMiOiAi8J+HuvCfh7hVUy0xOTguMjAwLjQ4LjI0OC0xNTIyIiwKICAgICJ0bHMiOiAidGxzIiwKICAgICJ0eXBlIjogImF1dG8iLAogICAgInNlY3VyaXR5IjogImF1dG8iLAogICAgInNraXAtY2VydC12ZXJpZnkiOiB0cnVlLAogICAgInNuaSI6ICIiCn0=
 
