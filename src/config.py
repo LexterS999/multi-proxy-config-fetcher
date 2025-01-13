@@ -186,8 +186,8 @@ class ProxyConfig:
         ]
 
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 3,
-            "max": 25
+            "min": 7000,
+            "max": 7000
         }
 
         self.SUPPORTED_PROTOCOLS: Dict[str, Dict] = {
@@ -212,13 +212,13 @@ class ProxyConfig:
             "vmess://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 1,
+                "priority": 2,
                 "flexible_max": True
             },
             "ss://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 1,
+                "priority": 2,
                 "flexible_max": True
             },
             "trojan://": {
@@ -235,8 +235,8 @@ class ProxyConfig:
             }
         }
 
-        self.MIN_CONFIGS_PER_CHANNEL = 3
-        self.MAX_CONFIGS_PER_CHANNEL = 50
+        self.MIN_CONFIGS_PER_CHANNEL = 7000
+        self.MAX_CONFIGS_PER_CHANNEL = 7000
         self.MAX_CONFIG_AGE_DAYS = 90
         self.CHANNEL_RETRY_LIMIT = 5
         self.CHANNEL_ERROR_THRESHOLD = 0.7
