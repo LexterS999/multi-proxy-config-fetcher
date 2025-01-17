@@ -138,8 +138,8 @@ class ProxyConfig:
         self.MAX_CONFIGS_PER_CHANNEL = 6000    # Maximum configs allowed from each channel (default: 50)
         self.MAX_CONFIG_AGE_DAYS = 90        # Maximum age of configs in days (default: 90)
         self.CHANNEL_RETRY_LIMIT = 10        # Maximum retry attempts per channel (default: 10)
-        self.CHANNEL_ERROR_THRESHOLD = 0.9   # Error rate threshold to disable channel (default: 0.7 or 70%)
-        self.MIN_PROTOCOL_RATIO = 0.9        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
+        self.CHANNEL_ERROR_THRESHOLD = 0.7   # Error rate threshold to disable channel (default: 0.7 or 70%)
+        self.MIN_PROTOCOL_RATIO = 0.2        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
 
         # Dynamic protocol adjustment settings
         self.DYNAMIC_PROTOCOL_ADJUSTMENT = True   # Enable/disable dynamic adjustment (default: True)
