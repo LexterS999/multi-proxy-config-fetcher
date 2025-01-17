@@ -69,7 +69,23 @@ class ProxyConfig:
             ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-security-tl"),
             ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-xh"),
             ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-gr"),
-            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-ht")
+            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-ht"),
+            ChannelConfig("https://github.com/Vauth/node/raw/main/Main"),
+            ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/one_file_vpn.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/two_file_vpn.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vless")
         ]
 
         # Global limits for number of configs per protocol
