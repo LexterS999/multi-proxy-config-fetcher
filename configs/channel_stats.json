@@ -1,23 +1,23 @@
 {
-  "timestamp": "2025-01-17T12:07:16.471186",
+  "timestamp": "2025-01-17T12:48:05.262243",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/Space-00/V2ray-configs/refs/heads/main/config.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 319,
-        "valid_configs": 61,
-        "unique_configs": 61,
+        "total_configs": 320,
+        "valid_configs": 60,
+        "unique_configs": 60,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 44.78,
+        "overall_score": 44.69,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 1,
-          "vmess://": 33,
+          "vmess://": 32,
           "ss://": 0,
           "trojan://": 27,
           "tuic://": 0
@@ -281,18 +281,18 @@
       "url": "https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vless",
       "enabled": true,
       "metrics": {
-        "total_configs": 614,
-        "valid_configs": 582,
-        "unique_configs": 503,
+        "total_configs": 607,
+        "valid_configs": 575,
+        "unique_configs": 496,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 60.3,
+        "overall_score": 60.25,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 580,
+          "vless://": 573,
           "vmess://": 0,
           "ss://": 0,
           "trojan://": 2,
