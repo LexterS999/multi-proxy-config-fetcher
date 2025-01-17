@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <svg width="800" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg width="800" height="1800" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <style>
         .row { font: 14px Arial; fill: #64748b; }
         .score { font: bold 14px Arial; fill: #64748b; }
     </style>
-    <text x="400" y="40" text-anchor="middle" font-size="20px" font-weight="bold" fill="#64748b">Channel Performance Overview</text><rect x="150" y="80" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="80" width="223.75" height="30" fill="#ef4444" rx="5"/>
+    <text x="400" y="40" text-anchor="middle" font-size="20px" font-weight="bold" fill="#64748b">Channel Performance Overview</text><rect x="150" y="80" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="80" width="223.9" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="100" text-anchor="end" class="row">config.txt</text>
         <text x="660" y="100" text-anchor="start" class="score">44.8% (S:0%)</text><rect x="150" y="130" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="130" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="150" text-anchor="end" class="row">V2RAY_SUB.txt</text>
@@ -28,16 +28,48 @@
         <text x="140" y="600" text-anchor="end" class="row">wstls_base64</text>
         <text x="660" y="600" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="630" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="630" width="324.7" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="650" text-anchor="end" class="row">udp.txt</text>
-        <text x="660" y="650" text-anchor="start" class="score">64.9% (S:0%)</text><rect x="150" y="680" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="680" width="302.0" height="30" fill="#eab308" rx="5"/>
+        <text x="660" y="650" text-anchor="start" class="score">64.9% (S:0%)</text><rect x="150" y="680" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="680" width="301.5" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="700" text-anchor="end" class="row">vless</text>
-        <text x="660" y="700" text-anchor="start" class="score">60.4% (S:0%)</text><rect x="150" y="730" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="730" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="700" text-anchor="start" class="score">60.3% (S:0%)</text><rect x="150" y="730" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="730" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="750" text-anchor="end" class="row">mix-security-re</text>
-        <text x="660" y="750" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="780" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="780" width="213.9" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="750" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="780" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="780" width="218.35000000000002" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="800" text-anchor="end" class="row">mix-security-tl</text>
-        <text x="660" y="800" text-anchor="start" class="score">42.8% (S:0%)</text><rect x="150" y="830" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="830" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="800" text-anchor="start" class="score">43.7% (S:0%)</text><rect x="150" y="830" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="830" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="850" text-anchor="end" class="row">mix-network-xh</text>
-        <text x="660" y="850" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="880" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="880" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="850" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="880" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="880" width="80.45" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="900" text-anchor="end" class="row">mix-network-gr</text>
-        <text x="660" y="900" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="930" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="930" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="900" text-anchor="start" class="score">16.1% (S:0%)</text><rect x="150" y="930" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="930" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="950" text-anchor="end" class="row">mix-network-ht</text>
-        <text x="660" y="950" text-anchor="start" class="score">15.0% (S:0%)</text></svg>
+        <text x="660" y="950" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="980" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="980" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1000" text-anchor="end" class="row">Main</text>
+        <text x="660" y="1000" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1030" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1030" width="325.0" height="30" fill="#eab308" rx="5"/>
+        <text x="140" y="1050" text-anchor="end" class="row">one_file_vpn.txt</text>
+        <text x="660" y="1050" text-anchor="start" class="score">65.0% (S:0%)</text><rect x="150" y="1080" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1080" width="299.7" height="30" fill="#eab308" rx="5"/>
+        <text x="140" y="1100" text-anchor="end" class="row">two_file_vpn.txt</text>
+        <text x="660" y="1100" text-anchor="start" class="score">59.9% (S:0%)</text><rect x="150" y="1130" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1130" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1150" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1150" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1180" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1180" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1200" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1200" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1230" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1230" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1250" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1250" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1280" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1280" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1300" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1300" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1330" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1330" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1350" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1350" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1380" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1380" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1400" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1400" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1430" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1430" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1450" text-anchor="end" class="row">hysteria</text>
+        <text x="660" y="1450" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1480" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1480" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1500" text-anchor="end" class="row">reality</text>
+        <text x="660" y="1500" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1530" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1530" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1550" text-anchor="end" class="row">reality</text>
+        <text x="660" y="1550" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1580" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1580" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1600" text-anchor="end" class="row">reality</text>
+        <text x="660" y="1600" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1630" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1630" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1650" text-anchor="end" class="row">vless</text>
+        <text x="660" y="1650" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1680" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1680" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1700" text-anchor="end" class="row">vless</text>
+        <text x="660" y="1700" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="1730" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1730" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="140" y="1750" text-anchor="end" class="row">vless</text>
+        <text x="660" y="1750" text-anchor="start" class="score">15.0% (S:0%)</text></svg>
