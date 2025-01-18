@@ -1,40 +1,40 @@
 {
-  "timestamp": "2025-01-17T12:48:05.262243",
+  "timestamp": "2025-01-18T02:09:19.601422",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/Space-00/V2ray-configs/refs/heads/main/config.txt",
       "enabled": true,
       "metrics": {
         "total_configs": 320,
-        "valid_configs": 60,
-        "unique_configs": 60,
+        "valid_configs": 59,
+        "unique_configs": 59,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 44.69,
+        "overall_score": 44.61,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 1,
-          "vmess://": 32,
+          "vmess://": 30,
           "ss://": 0,
-          "trojan://": 27,
+          "trojan://": 28,
           "tuic://": 0
         }
       }
     },
     {
       "url": "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/main/V2RAY_SUB.txt",
-      "enabled": false,
+      "enabled": true,
       "metrics": {
         "total_configs": 10,
-        "valid_configs": 0,
-        "unique_configs": 0,
+        "valid_configs": 9,
+        "unique_configs": 9,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 15.0,
+        "overall_score": 62.5,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
@@ -42,7 +42,7 @@
           "vless://": 0,
           "vmess://": 0,
           "ss://": 0,
-          "trojan://": 0,
+          "trojan://": 9,
           "tuic://": 0
         }
       }
@@ -258,9 +258,9 @@
       "url": "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 1244,
-        "valid_configs": 1242,
-        "unique_configs": 1241,
+        "total_configs": 1246,
+        "valid_configs": 1244,
+        "unique_configs": 1243,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
@@ -268,7 +268,7 @@
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 1201,
+          "hysteria2://": 1203,
           "vless://": 2,
           "vmess://": 0,
           "ss://": 0,
@@ -281,18 +281,18 @@
       "url": "https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vless",
       "enabled": true,
       "metrics": {
-        "total_configs": 607,
-        "valid_configs": 575,
-        "unique_configs": 496,
+        "total_configs": 596,
+        "valid_configs": 567,
+        "unique_configs": 488,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 60.25,
+        "overall_score": 60.3,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 573,
+          "vless://": 565,
           "vmess://": 0,
           "ss://": 0,
           "trojan://": 2,
@@ -327,19 +327,19 @@
       "url": "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-security-tl",
       "enabled": true,
       "metrics": {
-        "total_configs": 109,
-        "valid_configs": 16,
-        "unique_configs": 16,
+        "total_configs": 52,
+        "valid_configs": 12,
+        "unique_configs": 12,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 43.67,
+        "overall_score": 45.77,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 0,
-          "vmess://": 5,
+          "vmess://": 1,
           "ss://": 0,
           "trojan://": 11,
           "tuic://": 0
@@ -350,7 +350,7 @@
       "url": "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-xh",
       "enabled": false,
       "metrics": {
-        "total_configs": 3,
+        "total_configs": 4,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -373,19 +373,19 @@
       "url": "https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-gr",
       "enabled": false,
       "metrics": {
-        "total_configs": 23,
-        "valid_configs": 1,
+        "total_configs": 17,
+        "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 16.09,
+        "overall_score": 15.0,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 0,
-          "vmess://": 1,
+          "vmess://": 0,
           "ss://": 0,
           "trojan://": 0,
           "tuic://": 0
