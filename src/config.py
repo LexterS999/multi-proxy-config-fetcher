@@ -48,26 +48,22 @@ class ChannelConfig:
         self.metrics.overall_score = reliability_score + quality_score + uniqueness_score + response_score
 
 class ProxyConfig:
-            def __init__(self):
-            # List of source URLs to fetch proxy configs from
-            # Add or remove channels here. Each ChannelConfig takes a URL and enabled status (default: True)
-            self.SOURCE_URLS = [
+    def __init__(self):
+        # List of source URLs to fetch proxy configs from
+        # Add or remove channels here. Each ChannelConfig takes a URL and enabled status (default: True)
+        self.SOURCE_URLS = [
             ChannelConfig("https://raw.githubusercontent.com/RaymondHarris971/ssrsub/master/9a075bdee5.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Tenerome/v2ray/main/vmess.txt"),
             ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/server.txt"),
             ChannelConfig("https://raw.githubusercontent.com/vxiaov/free_proxies/refs/heads/main/links.txt"),
             ChannelConfig("https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"),
             ChannelConfig("https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/main/V2RAY_SUB.txt"),
             ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/server.txt"),
             ChannelConfig("https://raw.githubusercontent.com/MrPooyaX/VpnsFucking/main/Shenzo.txt"),
             ChannelConfig("https://raw.githubusercontent.com/sansorchi/sansorchi/refs/heads/main/data.txt"),
             ChannelConfig("https://raw.githubusercontent.com/SamanValipour1/My-v2ray-configs/refs/heads/main/MySub.txt"),
             ChannelConfig("https://raw.githubusercontent.com/MrPooyaX/SansorchiFucker/refs/heads/main/data.txt"),
             ChannelConfig("https://raw.githubusercontent.com/MrPooyaX/VpnsFucking/refs/heads/main/BeVpn.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/MrPooyaX/VpnsFucking/refs/heads/main/Shenzo.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/MrPooyaX/VpnsFucking/main/Shenzo.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Ashkan-m/v2ray/refs/heads/main/Sub.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Mohammadgb0078/IRV2ray/main/vless.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Mohammadgb0078/IRV2ray/main/vmess.txt"),
@@ -84,7 +80,6 @@ class ProxyConfig:
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vless.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/trojan.txt"),
             ChannelConfig("https://raw.githubusercontent.com/freev2rayconfig/V2RAY_SUBSCRIPTION_LINK/main/v2rayconfigs.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/main/V2RAY_SUB.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/vmess_iran.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/ss_iran.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/trojan_iran.txt"),
@@ -116,7 +111,32 @@ class ProxyConfig:
             ChannelConfig("https://freessrnode.github.io/uploads/2024/08/3-20240822.txt"),
             ChannelConfig("https://freessrnode.github.io/uploads/2024/08/4-20240822.txt"),
             ChannelConfig("https://v2rayshare.com/wp-content/uploads/2022/12/20221208.txt"),
-            ChannelConfig("https://clashnode.com/wp-content/uploads/2023/03/20230310.txt")
+            ChannelConfig("https://clashnode.com/wp-content/uploads/2023/03/20230310.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Space-00/V2ray-configs/refs/heads/main/config.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/main/reality.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Splitted-By-Protocol/vless.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Splitted-By-Protocol/trojan.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vless.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/trojan.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/ws_tls/proxies/wstls_base64"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-security-re"),
+            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-security-tl"),
+            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-xh"),
+            ChannelConfig("https://raw.githubusercontent.com/wuqb2i4f/xray-config-toolkit/refs/heads/main/output/base64/mix-network-gr"),
+            ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/one_file_vpn.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/two_file_vpn.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/tuic"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/tuic")
         ]
 
         # Global limits for number of configs per protocol
