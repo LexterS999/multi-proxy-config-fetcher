@@ -91,8 +91,8 @@ class ProxyConfig:
         # Default values: min=3, max=25
         # Adjust these values to control how many configs of each type are collected
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 9000,    # Minimum configs required per protocol (default: 3)
-            "max": 12000    # Maximum configs allowed per protocol (default: 25)
+            "min": 100,    # Minimum configs required per protocol (default: 3)
+            "max": 6000    # Maximum configs allowed per protocol (default: 25)
         }
 
         # Supported proxy protocols configuration
@@ -107,7 +107,7 @@ class ProxyConfig:
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
                 "priority": 1,
-                "flexible_max": False
+                "flexible_max": True
             },
             "hysteria2://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
@@ -149,12 +149,12 @@ class ProxyConfig:
         }
 
         # Channel-specific configuration limits
-        self.MIN_CONFIGS_PER_CHANNEL = 9000     # Minimum configs required from each channel (default: 3)
-        self.MAX_CONFIGS_PER_CHANNEL = 12000    # Maximum configs allowed from each channel (default: 50)
+        self.MIN_CONFIGS_PER_CHANNEL = 3     # Minimum configs required from each channel (default: 3)
+        self.MAX_CONFIGS_PER_CHANNEL = 100000    # Maximum configs allowed from each channel (default: 50)
         self.MAX_CONFIG_AGE_DAYS = 90        # Maximum age of configs in days (default: 90)
         self.CHANNEL_RETRY_LIMIT = 1        # Maximum retry attempts per channel (default: 10)
         self.CHANNEL_ERROR_THRESHOLD = 0.7   # Error rate threshold to disable channel (default: 0.7 or 70%)
-        self.MIN_PROTOCOL_RATIO = 0.9        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
+        self.MIN_PROTOCOL_RATIO = 0.4        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
 
         # Dynamic protocol adjustment settings
         self.DYNAMIC_PROTOCOL_ADJUSTMENT = True   # Enable/disable dynamic adjustment (default: True)
