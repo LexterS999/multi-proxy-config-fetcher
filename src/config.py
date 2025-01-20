@@ -75,11 +75,9 @@ class ProxyConfig:
             ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/hysteria2.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/ss.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/ssr.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/mix.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vmess.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vless.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/trojan.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/freev2rayconfig/V2RAY_SUBSCRIPTION_LINK/main/v2rayconfigs.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/vmess_iran.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/ss_iran.txt"),
             ChannelConfig("https://raw.githubusercontent.com/youfoundamin/V2rayCollector/main/trojan_iran.txt"),
@@ -204,7 +202,7 @@ class ProxyConfig:
         self.MIN_CONFIGS_PER_CHANNEL = 10000     # Minimum configs required from each channel (default: 3)
         self.MAX_CONFIGS_PER_CHANNEL = 16000    # Maximum configs allowed from each channel (default: 50)
         self.MAX_CONFIG_AGE_DAYS = 30        # Maximum age of configs in days (default: 90)
-        self.CHANNEL_RETRY_LIMIT = 4        # Maximum retry attempts per channel (default: 10)
+        self.CHANNEL_RETRY_LIMIT = 1        # Maximum retry attempts per channel (default: 10)
         self.CHANNEL_ERROR_THRESHOLD = 0.9   # Error rate threshold to disable channel (default: 0.7 or 70%)
         self.MIN_PROTOCOL_RATIO = 2.0        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
 
@@ -217,9 +215,9 @@ class ProxyConfig:
         self.STATS_FILE = 'configs/channel_stats.json'    # Path to save channel stats
         
         # HTTP request settings
-        self.MAX_RETRIES = 4            # Maximum number of retry attempts (default: 10)
-        self.RETRY_DELAY = 30            # Delay between retries in seconds (default: 15)
-        self.REQUEST_TIMEOUT = 30        # Request timeout in seconds (default: 60)
+        self.MAX_RETRIES = 1            # Maximum number of retry attempts (default: 10)
+        self.RETRY_DELAY = 1            # Delay between retries in seconds (default: 15)
+        self.REQUEST_TIMEOUT = 1        # Request timeout in seconds (default: 60)
         
         # HTTP request headers (default User-Agent and other headers)
         self.HEADERS = {
