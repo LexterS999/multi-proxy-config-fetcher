@@ -17,16 +17,24 @@ class ConfigValidator:
         except:
             return False
 
-    @staticmethod
-    def decode_base64_url(s: str) -> Optional[bytes]:
-        try:
-            s = s.replace('-', '+').replace('_', '/')
-            padding = 4 - (len(s) % 4)
-            if padding != 4:
-                s += '=' * padding
-            return base64.b64decode(s)
-        except:
+@staticmethod
+def decode_base64_url(s: str) -> Optional[bytes]:
+    try:
+        # Проверяем, что строка корректна для Base64
+        if not ConfigValidator.is_base64(s):
+            print(f"Invalid Base64 string: {s}")
             return None
+
+        # Заменяем URL-безопасные символы на стандартные
+        s = s.replace('-', '+').replace('_', '/')
+        # Дополняем строку до длины, кратной 4
+        padding = len(s) % 4
+        if padding:
+            s += '=' * (4 - padding)
+        return base64.b64decode(s)
+    except Exception as e:
+        print(f"Error decoding Base64: {e}")
+        return None
 
     @staticmethod
     def clean_vmess_config(config: str) -> str:
