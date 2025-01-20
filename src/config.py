@@ -54,8 +54,6 @@ class ProxyConfig:
         self.SOURCE_URLS = [
             ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
             ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
-            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vless"),
-            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/trojan"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Configs_TLS.txt"),
             ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt"),
             ChannelConfig("https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.txt"),
