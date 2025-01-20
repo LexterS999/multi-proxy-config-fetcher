@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-01-20T14:41:17.848967+00:00",
+  "timestamp": "2025-01-20T15:53:24.401713+00:00",
   "channels": [
     {
-      "url": "https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt",
+      "url": "https://t.me/s/FreeV2rays",
       "enabled": false,
       "metrics": {
-        "total_configs": 100,
+        "total_configs": 0,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -25,332 +25,33 @@
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria",
+      "url": "https://t.me/s/v2ray_free_conf",
       "enabled": true,
       "metrics": {
-        "total_configs": 323,
-        "valid_configs": 321,
-        "unique_configs": 321,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 64.85,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 321,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vless",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 702,
-        "valid_configs": 4,
-        "unique_configs": 4,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.14,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 2,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 2,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/trojan",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 98,
-        "valid_configs": 95,
-        "unique_configs": 93,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 63.71,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 95,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Configs_TLS.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 4421,
-        "valid_configs": 949,
-        "unique_configs": 949,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 45.37,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 949,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 9491,
-        "valid_configs": 2087,
-        "unique_configs": 1138,
-        "avg_response_time": 0.02,
+        "total_configs": 20,
+        "valid_configs": 15,
+        "unique_configs": 15,
+        "avg_response_time": 0.41,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 69.1,
-        "last_success": "2025-01-20T14:39:19.605018+00:00",
-        "protocol_counts": {
-          "wireguard://": 1,
-          "hysteria2://": 0,
-          "vless://": 5,
-          "vmess://": 274,
-          "ss://": 8,
-          "trojan://": 1799,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 269,
-        "valid_configs": 32,
-        "unique_configs": 32,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 42.97,
-        "last_success": null,
+        "overall_score": 93.13,
+        "last_success": "2025-01-20T15:52:53.040596+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 11,
-          "ss://": 0,
-          "trojan://": 21,
+          "vless://": 1,
+          "vmess://": 7,
+          "ss://": 3,
+          "trojan://": 4,
           "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/ndnode.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 173,
-        "valid_configs": 48,
-        "unique_configs": 48,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 46.94,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 13,
-          "ss://": 0,
-          "trojan://": 35,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 193,
-        "valid_configs": 29,
-        "unique_configs": 29,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 43.76,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 8,
-          "ss://": 0,
-          "trojan://": 21,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/v2rayshare.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 35,
-        "valid_configs": 12,
-        "unique_configs": 12,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 48.57,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 6,
-          "ss://": 0,
-          "trojan://": 6,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt",
+      "url": "https://t.me/s/PrivateVPNs",
       "enabled": false,
       "metrics": {
-        "total_configs": 262,
-        "valid_configs": 40,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 18.82,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 1,
-          "hysteria2://": 0,
-          "vless://": 5,
-          "vmess://": 14,
-          "ss://": 8,
-          "trojan://": 12,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/hysteria",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 32,
-        "valid_configs": 30,
-        "unique_configs": 4,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 41.77,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 30,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/hysteria",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 323,
-        "valid_configs": 321,
-        "unique_configs": 5,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.23,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 321,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/tuic",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 3,
-        "valid_configs": 1,
-        "unique_configs": 1,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 48.33,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 1
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/tuic",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 27,
-        "valid_configs": 25,
-        "unique_configs": 25,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 63.15,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 25
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/reality",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 135,
+        "total_configs": 0,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -370,10 +71,10 @@
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/reality",
+      "url": "https://t.me/s/IP_CF_Config",
       "enabled": false,
       "metrics": {
-        "total_configs": 496,
+        "total_configs": 0,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -393,137 +94,68 @@
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/vless",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 3084,
-        "valid_configs": 0,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/vless",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 6157,
-        "valid_configs": 0,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/channels/protocols/trojan",
+      "url": "https://t.me/s/shadowproxy66",
       "enabled": true,
       "metrics": {
-        "total_configs": 1000,
-        "valid_configs": 1000,
-        "unique_configs": 18,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.45,
-        "last_success": null,
+        "total_configs": 75,
+        "valid_configs": 11,
+        "unique_configs": 11,
+        "avg_response_time": 0.6,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 77.77,
+        "last_success": "2025-01-20T15:53:03.963190+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 1000,
+          "vless://": 1,
+          "vmess://": 7,
+          "ss://": 3,
+          "trojan://": 0,
           "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/subscribe/protocols/trojan",
+      "url": "https://t.me/s/OutlineReleasedKey",
       "enabled": true,
       "metrics": {
-        "total_configs": 1597,
-        "valid_configs": 1597,
-        "unique_configs": 40,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.63,
-        "last_success": null,
+        "total_configs": 24,
+        "valid_configs": 17,
+        "unique_configs": 17,
+        "avg_response_time": 0.33,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 92.22,
+        "last_success": "2025-01-20T15:53:06.334853+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 0,
           "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 1597,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/v2ray-worker-sub/refs/heads/master/sub",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 192,
-        "valid_configs": 0,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
+          "ss://": 17,
           "trojan://": 0,
           "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/submerge/converted.txt",
+      "url": "https://t.me/s/prrofile_purple",
       "enabled": true,
       "metrics": {
-        "total_configs": 3264,
-        "valid_configs": 233,
-        "unique_configs": 233,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 41.78,
-        "last_success": null,
+        "total_configs": 152,
+        "valid_configs": 102,
+        "unique_configs": 89,
+        "avg_response_time": 0.37,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 88.04,
+        "last_success": "2025-01-20T15:53:08.768183+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 233,
+          "vless://": 99,
+          "vmess://": 3,
           "ss://": 0,
           "trojan://": 0,
           "tuic://": 0
@@ -531,263 +163,102 @@
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/ws_tls/proxies/wstls_base64",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 673,
-        "valid_configs": 48,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 16.78,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 48,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt",
+      "url": "https://t.me/s/proxy_shadosocks",
       "enabled": true,
       "metrics": {
-        "total_configs": 1289,
-        "valid_configs": 1282,
-        "unique_configs": 967,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 58.72,
-        "last_success": null,
+        "total_configs": 23,
+        "valid_configs": 8,
+        "unique_configs": 8,
+        "avg_response_time": 0.3,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 83.25,
+        "last_success": "2025-01-20T15:53:11.110690+00:00",
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 1246,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
+          "hysteria2://": 0,
+          "vless://": 6,
+          "vmess://": 1,
+          "ss://": 1,
           "trojan://": 0,
-          "tuic://": 36
+          "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2",
+      "url": "https://t.me/s/meli_proxyy",
       "enabled": true,
       "metrics": {
         "total_configs": 54,
-        "valid_configs": 54,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 54,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/vless",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 3287,
-        "valid_configs": 2,
-        "unique_configs": 2,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 40.02,
-        "last_success": null,
+        "valid_configs": 46,
+        "unique_configs": 46,
+        "avg_response_time": 0.33,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 95.8,
+        "last_success": "2025-01-20T15:53:13.484514+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 2,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/one_file_vpn.txt",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 29,
-        "valid_configs": 0,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/two_file_vpn.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 1925,
-        "valid_configs": 715,
-        "unique_configs": 715,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 49.29,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 460,
-          "hysteria2://": 31,
-          "vless://": 0,
-          "vmess://": 176,
-          "ss://": 0,
-          "trojan://": 48,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/three_file_vpn.txt",
-      "enabled": false,
-      "metrics": {
-        "total_configs": 1,
-        "valid_configs": 0,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 0,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/four_file_vpn.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 48,
-        "valid_configs": 11,
-        "unique_configs": 11,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 45.73,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 0,
-          "vmess://": 0,
-          "ss://": 0,
-          "trojan://": 11,
-          "tuic://": 0
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/five_file_vpn.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 97,
-        "valid_configs": 17,
-        "unique_configs": 17,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 44.38,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 4,
-          "vless://": 0,
-          "vmess://": 8,
-          "ss://": 0,
-          "trojan://": 2,
-          "tuic://": 3
-        }
-      }
-    },
-    {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/six_file_vpn.txt",
-      "enabled": true,
-      "metrics": {
-        "total_configs": 60,
-        "valid_configs": 12,
-        "unique_configs": 12,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 45.0,
-        "last_success": null,
-        "protocol_counts": {
-          "wireguard://": 0,
-          "hysteria2://": 5,
-          "vless://": 0,
+          "vless://": 40,
           "vmess://": 6,
           "ss://": 0,
-          "trojan://": 1,
+          "trojan://": 0,
           "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/seven_file_vpn.txt",
-      "enabled": true,
+      "url": "https://t.me/s/DirectVPN",
+      "enabled": false,
       "metrics": {
-        "total_configs": 77,
-        "valid_configs": 36,
-        "unique_configs": 36,
+        "total_configs": 0,
+        "valid_configs": 0,
+        "unique_configs": 0,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 51.69,
+        "overall_score": 15.0,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 29,
+          "hysteria2://": 0,
           "vless://": 0,
-          "vmess://": 1,
+          "vmess://": 0,
           "ss://": 0,
-          "trojan://": 6,
+          "trojan://": 0,
           "tuic://": 0
         }
       }
     },
     {
-      "url": "https://raw.githubusercontent.com/Surfboardv2ray/xhttp-parser/refs/heads/main/output/xhttp.txt",
+      "url": "https://t.me/s/VmessProtocol",
+      "enabled": true,
+      "metrics": {
+        "total_configs": 55,
+        "valid_configs": 39,
+        "unique_configs": 39,
+        "avg_response_time": 0.86,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 91.44,
+        "last_success": "2025-01-20T15:53:20.396124+00:00",
+        "protocol_counts": {
+          "wireguard://": 0,
+          "hysteria2://": 1,
+          "vless://": 17,
+          "vmess://": 14,
+          "ss://": 5,
+          "trojan://": 2,
+          "tuic://": 0
+        }
+      }
+    },
+    {
+      "url": "https://t.me/s/V2ray_Alpha",
       "enabled": false,
       "metrics": {
-        "total_configs": 141,
+        "total_configs": 0,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
