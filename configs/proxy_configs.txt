@@ -4024,8 +4024,6 @@ trojan://telegram-id-privatevpns@13.61.170.60:22222?security=tls&alpn=http/1.1&h
 
 trojan://telegram-id-privatevpns@13.61.170.60:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#@v2ray_configs_poolSweden`
 
-trojan://telegram-id-privatevpns@13.61.170.60:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#Free
-
 trojan://telegram-id-privatevpns@13.61.170.60:22222?security=tls&sni=trojan.burgerip.co.uk#%F0%9F%87%B8%F0%9F%87%AASE-13.61.170.60-6210
 
 trojan://telegram-id-privatevpns@13.61.170.60:22222?security=tls&sni=trojan.burgerip.co.uk&type=tcp&alpn=http/1.1#TR-TCP-TLSSE-13.61.170.60:22222
@@ -4290,11 +4288,15 @@ trojan://telegram-id-privatevpns@52.208.94.199:22222?security=tls&alpn=http/1.1&
 
 trojan://telegram-id-privatevpns@52.208.94.199:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#@v2ray_configs_poolIreland`
 
+trojan://telegram-id-privatevpns@52.208.94.199:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#Free
+
 trojan://telegram-id-privatevpns@52.208.94.199:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[]t.me/ConfigsHub`
 
 trojan://telegram-id-privatevpns@52.30.167.191:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#(S110)t.me/PrivateVPNs`
 
 trojan://telegram-id-privatevpns@52.30.167.191:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#@v2ray_configs_poolIreland`
+
+trojan://telegram-id-privatevpns@52.30.167.191:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#Free
 
 trojan://telegram-id-privatevpns@52.30.167.191:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[]t.me/ConfigsHub`
 
@@ -4329,8 +4331,6 @@ trojan://telegram-id-privatevpns@54.93.222.137:22222?security=tls&alpn=http/1.1&
 trojan://telegram-id-privatevpns@63.176.11.19:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#@Vip_Securityjoinus-238
 
 trojan://telegram-id-privatevpns@63.177.159.17:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#@Vip_Securityjoinus-239
-
-trojan://telegram-id-privatevpns@63.177.159.17:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#Free
 
 trojan://telegram-id-privatevpns@63.177.159.17:22222?security=tls&sni=trojan.burgerip.co.uk#%F0%9F%87%A9%F0%9F%87%AADE-63.177.159.17-6208
 
@@ -4727,8 +4727,6 @@ hysteria2://0560a2ab-9e10-456c-883d-cc152e0b1545@176.32.33.73:1200?obfs=salamand
 hysteria2://0560a2ab-9e10-456c-883d-cc152e0b1545@194.87.68.196:13167?obfs=salamander&obfs-password=MzliZDM5MDFhYmFlNTAyMA%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20St%20Petersburg%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
 
 hysteria2://0560a2ab-9e10-456c-883d-cc152e0b1545@194.87.69.42:7660?obfs=salamander&obfs-password=MzliZDM5MDFhYmFlNTAyMA%3D%3D&insecure=1#HYSTERIA-UDPRU-194.87.69.42:7660
-
-hysteria2://0560a2ab-9e10-456c-883d-cc152e0b1545@194.87.69.42:7660?obfs=salamander&obfs-password=MzliZDM5MDFhYmFlNTAyMA%3D%3D&insecure=1#HYSTERIA-UDPRU-194.87.69.42:7660hysteria://155.94.235.109:56600?upmbps=1126&downmbps=1126&obfs=xplus&obfsParam=1dDS9qxUIQXHmJYq2xitzRecWQTeQUZ8iWTqriKifH8RIWAOhu&protocol=wechat-video&insecure=1&peer=wechat.com&alpn=h3#HYSTERIA-UDPUS-155.94.235.109:56600
 
 hysteria2://0560a2ab-9e10-456c-883d-cc152e0b1545@195.58.49.173:33390?obfs=salamander&obfs-password=MzliZDM5MDFhYmFlNTAyMA%3D%3D&insecure=1#HYSTERIA-UDPRU-195.58.49.173:33390
 
@@ -5396,8 +5394,6 @@ hysteria2://43941cb9-265f-4044-bf93-d7763d5548ac@5.39.252.182:3898?obfs=salamand
 
 hysteria2://453D99CE-725A-4595-8E41-0661AB2C8FBB@1.36.166.125:1250?insecure=1#HYSTERIA-UDPHK-1.36.166.125:1250
 
-hysteria2://453D99CE-725A-4595-8E41-0661AB2C8FBB@1.36.166.125:1250?insecure=1#HYSTERIA-UDPHK-1.36.166.125:1250hysteria://51.158.54.46:55396?insecure=1&peer=youku.com&auth=dongtaiwang.com&upmbps=11&downmbps=55&alpn=h3#HYSTERIA-UDPFR-51.158.54.46:55396
-
 hysteria2://453e029f-09a4-42a8-a176-0e0e7acdda3d@176.32.33.124:2453?obfs=salamander&obfs-password=NWFiMGE5MDNlNmI5YWY1MA%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
 
 hysteria2://453e029f-09a4-42a8-a176-0e0e7acdda3d@176.32.33.158:1200?obfs=salamander&obfs-password=NDhhNmY5YTY0MGYzOTgxYQ%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
@@ -5561,8 +5557,6 @@ hysteria2://547e05a0-2e59-4712-b9f9-dedb10293d83@141.148.200.80:2052?insecure=1&
 hysteria2://547e05a0-2e59-4712-b9f9-dedb10293d83@166.88.164.181:2056?insecure=1&sni=bra1.xiaoliyu.us#HYSTERIA-UDPUS-166.88.164.181:2056
 
 hysteria2://547e05a0-2e59-4712-b9f9-dedb10293d83@166.88.164.187:2052?insecure=1&sni=us3.xiaoliyu.us#HYSTERIA-UDPUS-166.88.164.187:2052
-
-hysteria2://547e05a0-2e59-4712-b9f9-dedb10293d83@166.88.164.187:2052?insecure=1&sni=us3.xiaoliyu.us#HYSTERIA-UDPUS-166.88.164.187:2052hysteria://195.154.184.5:22787?insecure=1&peer=bing.com&auth=dongtaiwang.com&upmbps=11&downmbps=55&alpn=h3#HYSTERIA-UDPFR-195.154.184.5:22787hysteria://130.61.24.219:443?mport=6000-21000&insecure=1&auth=483f8ef7-8480-490d-92fb-1fc392fb34b6&upmbps=30&downmbps=70&alpn=h3#HYSTERIA-UDPDE-130.61.24.219:443
 
 hysteria2://547e05a0-2e59-4712-b9f9-dedb10293d83@166.88.228.144:2052?insecure=1&sni=fr1.xiaoliyu.us#HYSTERIA-UDPFR-166.88.228.144:2052
 
@@ -6040,8 +6034,6 @@ hysteria2://910398c0493d2d9d@104.168.128.162:57635?insecure=1#HYSTERIA-UDPUS-104
 
 hysteria2://91aa5eb5-e257-4885-a591-8ba742c4fcd2@152.53.54.139:30103?insecure=1&sni=35afq4514.surfcat.store#HYSTERIA-UDPAT-152.53.54.139:30103
 
-hysteria2://92dc14c5-e2b0-41bc-9827-1b687295c530@hkt1.hkg.hypernat.com:28204/?insecure=1&sni=hkt1.hkg.hypernat.com#@v2ray_configs_poolHongKong
-
 hysteria2://9324507f-f9a5-4cd1-8d27-5bc3ea2e8d50@176.32.33.158:1200?obfs=salamander&obfs-password=NDhhNmY5YTY0MGYzOTgxYQ%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
 
 hysteria2://9324507f-f9a5-4cd1-8d27-5bc3ea2e8d50@194.87.68.196:13167?obfs=salamander&obfs-password=MzliZDM5MDFhYmFlNTAyMA%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20St%20Petersburg%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
@@ -6100,11 +6092,7 @@ hysteria2://96cad374-7573-4463-8804-4665c2c3d932@52.197.242.96:5001?insecure=1&s
 
 hysteria2://96cad374-7573-4463-8804-4665c2c3d932@54.178.107.109:5001?insecure=1&sni=d1--cn-gotcha204-4.bilivideo.com#HYSTERIA-UDPJP-54.178.107.109:5001
 
-hysteria2://96cad374-7573-4463-8804-4665c2c3d932@54.178.107.109:5001?insecure=1&sni=d1--cn-gotcha204-4.bilivideo.com#HYSTERIA-UDPJP-54.178.107.109:5001hysteria://8.217.251.2:7539?upmbps=50&downmbps=100&auth=de08f485-8f8c-4316-9e80-6e7ecdf91d45&insecure=1&alpn=h3#HYSTERIA-UDPHK-8.217.251.2:7539
-
 hysteria2://96cad374-7573-4463-8804-4665c2c3d932@[2406:da14:536:647f:348d:e2a4:49b7:12ac]:5001?insecure=1&sni=d1--cn-gotcha204-4.bilivideo.com#HYSTERIA-UDPJP-[2406:da14:536:647f:348d:e2a4:49b7:12ac]:5001
-
-hysteria2://96cad374-7573-4463-8804-4665c2c3d932@[2406:da14:536:647f:348d:e2a4:49b7:12ac]:5001?insecure=1&sni=d1--cn-gotcha204-4.bilivideo.com#HYSTERIA-UDPJP-[2406:da14:536:647f:348d:e2a4:49b7:12ac]:5001hysteria://47.238.250.126:7539?upmbps=50&downmbps=100&auth=de08f485-8f8c-4316-9e80-6e7ecdf91d45&insecure=1&alpn=h3#HYSTERIA-UDPHK-47.238.250.126:7539
 
 hysteria2://96cad374-7573-4463-8804-4665c2c3d932@[2406:da14:a84:307f:3f52:9439:2eb2:5ee3]:5001?insecure=1&sni=d1--cn-gotcha204-4.bilivideo.com#HYSTERIA-UDPJP-[2406:da14:a84:307f:3f52:9439:2eb2:5ee3]:5001
 
@@ -6286,8 +6274,6 @@ hysteria2://KevinZakarian@66.23.198.31:443?obfs=salamander&obfs-password=KevinZa
 
 hysteria2://KevinZakarian@66.23.198.31:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-66.23.198.31:443
 
-hysteria2://KevinZakarian@66.23.198.31:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-66.23.198.31:443hysteria://108.181.5.133:26022?upmbps=80&downmbps=100&auth=dongtaiwang.com&insecure=1&peer=google.com&alpn=h3#HYSTERIA-UDPUS-108.181.5.133:26022
-
 hysteria2://KevinZakarian@66.23.198.31:8443?insecure=1&sni=kevin.serverv.net&obfs=salamander&obfs-password=KevinZakarian#HYSTERIA-UDPUS-66.23.198.31:8443
 
 hysteria2://KevinZakarian@66.23.198.32:443/?insecure=1&obfs=salamander&obfs-password=KevinZakarian&sni=www.eliv2ray.net#@vpnv2rayNGv
@@ -6297,8 +6283,6 @@ hysteria2://KevinZakarian@66.23.198.32:443?insecure=1&obfs=salamander&obfs-passw
 hysteria2://KevinZakarian@66.23.198.32:443?insecure=1&obfs=salamander&obfs-password=KevinZakarian&sni=www.eliv2ray.net#HYSTERIA-UDPUS-66.23.198.32:443hysteria://195.154.184.5:22787?insecure=1&peer=bing.com&auth=dongtaiwang.com&upmbps=11&downmbps=55&alpn=h3#HYSTERIA-UDPFR-195.154.184.5:22787
 
 hysteria2://KevinZakarian@66.23.198.32:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20-%20Norristown%20%F0%9F%8C%8E%20HY2-UDP-TLS%204%E2%83%A3
-
-hysteria2://KevinZakarian@66.23.198.32:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-66.23.198.32:443
 
 hysteria2://KevinZakarian@66.23.198.32:8443?insecure=1&sni=kevin.serverv.net&obfs=salamander&obfs-password=KevinZakarian#HYSTERIA-UDPUS-66.23.198.32:8443
 
@@ -6354,8 +6338,6 @@ hysteria2://KevinZakarian@[2606:a8c0:101:78::a]:443?obfs=salamander&obfs-passwor
 
 hysteria2://KevinZakarian@[2606:a8c0:101:78::a]:8443?insecure=1&sni=kevin.serverv.net&obfs=salamander&obfs-password=KevinZakarian#HYSTERIA-UDPUS-[2606:a8c0:101:78::a]:8443
 
-hysteria2://KevinZakarian@[2606:a8c0:101:7e::a]:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-[2606:a8c0:101:7e::a]:443
-
 hysteria2://KevinZakarian@[2606:a8c0:101:7e::a]:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-[2606:a8c0:101:7e::a]:443hysteria://195.154.184.5:22787?insecure=1&peer=bing.com&auth=dongtaiwang.com&upmbps=11&downmbps=55&alpn=h3#HYSTERIA-UDPFR-195.154.184.5:22787
 
 hysteria2://KevinZakarian@[2606:a8c0:101:7e::a]:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-[2606:a8c0:101:7e::a]:443hysteria://51.158.54.46:11926?upmbps=80&downmbps=100&auth=Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs&insecure=1&peer=youku.com&alpn=h3#HYSTERIA-UDPFR-51.158.54.46:11926
@@ -6367,8 +6349,6 @@ hysteria2://KevinZakarian@[2606:a8c0:101:82::a]:443?obfs=salamander&obfs-passwor
 hysteria2://KevinZakarian@[2606:a8c0:101:82::a]:8443?insecure=1&sni=kevin.serverv.net&obfs=salamander&obfs-password=KevinZakarian#HYSTERIA-UDPUS-[2606:a8c0:101:82::a]:8443
 
 hysteria2://KevinZakarian@[2606:a8c0:101:86::a]:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-[2606:a8c0:101:86::a]:443
-
-hysteria2://KevinZakarian@[2606:a8c0:101:86::a]:443?obfs=salamander&obfs-password=KevinZakarian&insecure=1#HYSTERIA-UDPUS-[2606:a8c0:101:86::a]:443hysteria://51.158.54.46:11926?upmbps=80&downmbps=100&auth=Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs&insecure=1&peer=youku.com&alpn=h3#HYSTERIA-UDPFR-51.158.54.46:11926
 
 hysteria2://KevinZakarian@[2606:a8c0:101:86::a]:8443?obfs=salamander&obfs-password=KevinZakarian&insecure=1&sni=kevin.serverv.net#HYSTERIA-UDPUS-[2606:a8c0:101:86::a]:8443
 
@@ -6385,8 +6365,6 @@ hysteria2://Q3uj1JvAq3@p2.punchline.ir:42499?security=tls&obfs=salamander&obfs-p
 hysteria2://QtgdPIrjSirZNtFJM01JQUPMvEVfih@178.236.237.84:443?insecure=1&sni=google.com#HYSTERIA-UDPJP-178.236.237.84:443
 
 hysteria2://StormXVPN@45.129.185.4:443?obfs=salamander&obfs-password=MYGaMeOP&insecure=1&sni=fast.com#HYSTERIA-UDPAM-45.129.185.4:443
-
-hysteria2://StormXVPN@45.129.185.4:443?obfs=salamander&obfs-password=MYGaMeOP&insecure=1&sni=fast.com#HYSTERIA-UDPAM-45.129.185.4:443hysteria://8.217.86.232:7539?upmbps=50&downmbps=100&auth=de08f485-8f8c-4316-9e80-6e7ecdf91d45&insecure=1&alpn=h3#HYSTERIA-UDPHK-8.217.86.232:7539
 
 hysteria2://StormXVPN@93.127.222.197:443?obfs=salamander&obfs-password=https://t.me/StormXVPN&insecure=1&sni=www.google.com#HYSTERIA-UDPDE-93.127.222.197:443
 
@@ -6476,8 +6454,6 @@ hysteria2://a2abd08c-bce1-436c-9008-4ba0ef210f6d@46.29.161.159:1200?obfs=salaman
 
 hysteria2://a2abd08c-bce1-436c-9008-4ba0ef210f6d@46.29.161.159:1200?obfs=salamander&obfs-password=NDhhNmY5YTY0MGYzOTgxYQ%3D%3D&insecure=1#HYSTERIA-UDPRU-46.29.161.159:1200
 
-hysteria2://a2abd08c-bce1-436c-9008-4ba0ef210f6d@46.29.161.159:1200?obfs=salamander&obfs-password=NDhhNmY5YTY0MGYzOTgxYQ%3D%3D&insecure=1#HYSTERIA-UDPRU-46.29.161.159:1200hysteria://141.145.194.153:443?mport=6000-21000&insecure=1&auth=483f8ef7-8480-490d-92fb-1fc392fb34b6&upmbps=30&downmbps=70&alpn=h3#HYSTERIA-UDPFR-141.145.194.153:443
-
 hysteria2://a2abd08c-bce1-436c-9008-4ba0ef210f6d@46.29.161.15:2453?obfs=salamander&obfs-password=NWFiMGE5MDNlNmI5YWY1MA%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
 
 hysteria2://a2abd08c-bce1-436c-9008-4ba0ef210f6d@46.29.161.224:1200?obfs=salamander&obfs-password=NDhhNmY5YTY0MGYzOTgxYQ%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
@@ -6531,8 +6507,6 @@ hysteria2://a6fd721b-c544-4da2-a20f-c384bfdf1842@119.236.19.51:20448?security=tl
 hysteria2://a741df90@156.229.163.98:22222?insecure=1&sni=www.bing.com#HYSTERIA-UDPUS-156.229.163.98:22222
 
 hysteria2://a7a51295@156.254.115.124:55134?insecure=1&sni=www.bing.com#HYSTERIA-UDPHK-156.254.115.124:55134
-
-hysteria2://a7a51295@156.254.115.124:55134?insecure=1&sni=www.bing.com#HYSTERIA-UDPHK-156.254.115.124:55134hysteria://167.160.90.251:48089?upmbps=11&downmbps=55&auth=dongtaiwang.com&insecure=1&peer=cdn.discordapp.com&alpn=h3#HYSTERIA-UDPUS-167.160.90.251:48089
 
 hysteria2://ab228da0-a064-4381-8f81-d185b9c50d8a@193.123.229.26:443?insecure=1&sni=ftp.chillwaze.com#HYSTERIA-UDPKR-193.123.229.26:443
 
@@ -6706,8 +6680,6 @@ hysteria2://c5110090-c3a2-429e-b9b8-072b6535be1b@140.82.16.240:8080?sni=jp4.troj
 
 hysteria2://c5110090-c3a2-429e-b9b8-072b6535be1b@144.202.119.175:8080?sni=jp2.trojanws.xyz#HYSTERIA-UDPUS-144.202.119.175:8080
 
-hysteria2://c5110090-c3a2-429e-b9b8-072b6535be1b@144.202.119.175:8080?sni=jp2.trojanws.xyz#HYSTERIA-UDPUS-144.202.119.175:8080hysteria://173.234.25.53:48919?upmbps=80&downmbps=100&auth=dongtaiwang.com&insecure=1&peer=vkvd127.mycdn.me&alpn=h3#HYSTERIA-UDPUS-173.234.25.53:48919
-
 hysteria2://c5110090-c3a2-429e-b9b8-072b6535be1b@149.28.71.141:8080?sni=jp1.trojanws.xyz#HYSTERIA-UDPUS-149.28.71.141:8080
 
 hysteria2://c553326e-a093-4eba-887f-9ac56fb0218f@176.32.33.124:2453?obfs=salamander&obfs-password=NWFiMGE5MDNlNmI5YWY1MA%3D%3D&insecure=1#%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20Kazan'%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
@@ -6737,8 +6709,6 @@ hysteria2://c69aff5c-965b-4141-93c8-c5bebdf62df5@46.29.161.224:1200?obfs=salaman
 hysteria2://c69aff5c-965b-4141-93c8-c5bebdf62df5@5.39.252.182:3898?obfs=salamander&obfs-password=M2UyNTc5OWUwYjkyM2Q2OQ%3D%3D&insecure=1#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20-%20Frankfurt%20am%20Main%20%F0%9F%8C%8D%20HY2-UDP-TLS%204%E2%83%A3
 
 hysteria2://c72ee44c@[2001:41d0:a:2a7a:a:b:df4e:2408]:35051?insecure=1&sni=2001:41d0:a:2a7a:a:b:df4e:2408#HYSTERIA-UDPFR-[2001:41d0:a:2a7a:a:b:df4e:2408]:35051
-
-hysteria2://c72ee44c@[2001:41d0:a:2a7a:a:b:df4e:2408]:35051?insecure=1&sni=2001:41d0:a:2a7a:a:b:df4e:2408#HYSTERIA-UDPFR-[2001:41d0:a:2a7a:a:b:df4e:2408]:35051hysteria://155.94.184.231:53985?upmbps=1100&downmbps=1100&obfs=xplus&obfsParam=56EbniqY350T0zuDxdjE4V0Vx5Fc0HibtgupKaC1Jl7Nthpomg&protocol=wechat-video&insecure=1&peer=wechat.com&alpn=h3#HYSTERIA-UDPUS-155.94.184.231:53985
 
 hysteria2://c76f08e20fb6368b@150.241.77.182:11122?security=tls&obfs=salamander&obfs-password=64da92df31fc63c1&insecure=1&sni=www.google.com#@Pashmam_Vpn
 
@@ -7154,8 +7124,6 @@ hysteria2://f6e4b19a3110d19d@66.135.28.59:443?obfs=salamander&obfs-password=8c3c
 
 hysteria2://f79e17cf-6aea-4bd3-b778-115daf4301de@212.192.15.239:1327?obfs=salamander&obfs-password=Y2JhZTU3ZjE4ZTI0MzRmMQ%3D%3D&insecure=1#%F0%9F%87%AD%F0%9F%87%B0%20Hong%20Kong%20-%20Hong%20Kong%20%F0%9F%8C%8F%20HY2-UDP-TLS%204%E2%83%A3
 
-hysteria2://f86f980f-3d1e-4598-95d0-b0ffdaf49f31@rb1.yiyuanlx.cc:34560/?insecure=1&sni=rb1.yiyuanlx.cc#@v2ray_configs_poolJapan
-
 hysteria2://f8b7a2af-7fae-4853-a91f-b430257648f0@85.209.154.74:53039?obfs=salamander&obfs-password=0pjlRGR3tjhXtMs&insecure=1&sni=alibaba.ir#HYSTERIA-UDPUS-85.209.154.74:53039
 
 hysteria2://f8b7a2af-7fae-4853-a91f-b430257648f0@85.209.154.74:53039?obfs=salamander&obfs-password=0pjlRGR3tjhXtMs&insecure=1&sni=alibaba.ir#HYSTERIA-UDPUS-85.209.154.74:53039hysteria://195.154.184.5:22787?insecure=1&peer=bing.com&auth=dongtaiwang.com&upmbps=11&downmbps=55&alpn=h3#HYSTERIA-UDPFR-195.154.184.5:22787
@@ -7224,8 +7192,6 @@ hysteria2://nRSmYP828VP1UwxlAnWEbmEtlLSH5SE7@[2a03:6f00:a::30d3]:443?obfs=salama
 
 hysteria2://p6FfuI684f@91.184.242.252:443?insecure=1&sni=www.whatsapp.com&obfs=salamander&obfs-password=ZHr2aBtNWmYGZ8NnBfjxU7A#HYSTERIA-UDPNL-91.184.242.252:443
 
-hysteria2://p6FfuI684f@91.184.242.252:443?insecure=1&sni=www.whatsapp.com&obfs=salamander&obfs-password=ZHr2aBtNWmYGZ8NnBfjxU7A#HYSTERIA-UDPNL-91.184.242.252:443hysteria://173.234.25.54:48919?upmbps=80&downmbps=100&auth=dongtaiwang.com&insecure=1&peer=vkvd127.mycdn.me&alpn=h3#HYSTERIA-UDPUS-173.234.25.54:48919
-
 hysteria2://public.vahshiestmeow3@104.168.128.173:443?insecure=1&sni=google.com#HYSTERIA-UDPUS-104.168.128.173:443
 
 hysteria2://ra9D9nHtxGQf80uPbfa2f3eY@47.128.157.34:3379?insecure=1&sni=hsg.fobbc.xyz#HYSTERIA-UDPSG-47.128.157.34:3379
@@ -7248,8 +7214,6 @@ hysteria2://sysadmin.sysadmin@103.235.18.69:444?insecure=1&sni=tototel.dogpp.com
 
 hysteria2://sysadmin.sysadmin@104.168.102.17:443?insecure=1#HYSTERIA-UDPUS-104.168.102.17:443
 
-hysteria2://sysadmin.sysadmin@104.168.102.17:443?insecure=1#HYSTERIA-UDPUS-104.168.102.17:443hysteria://47.76.32.35:7539?upmbps=50&downmbps=100&auth=de08f485-8f8c-4316-9e80-6e7ecdf91d45&insecure=1&alpn=h3#HYSTERIA-UDPHK-47.76.32.35:7539
-
 hysteria2://sysadmin.sysadmin@107.172.5.215:443?insecure=1#HYSTERIA-UDPUS-107.172.5.215:443
 
 hysteria2://sysadmin.sysadmin@107.172.83.214:8443?insecure=1&sni=a.jcchen.cfd#HYSTERIA-UDPUS-107.172.83.214:8443
@@ -7270,8 +7234,6 @@ hysteria2://sysadmin.sysadmin@148.135.43.253:446?insecure=1&sni=ss.aslirico3212.
 
 hysteria2://sysadmin.sysadmin@148.135.43.253:446?insecure=1&sni=ss.aslirico3212.nyc.mn#HYSTERIA-UDPUS-148.135.43.253:446
 
-hysteria2://sysadmin.sysadmin@148.135.43.253:446?insecure=1&sni=ss.aslirico3212.nyc.mn#HYSTERIA-UDPUS-148.135.43.253:446hysteria://173.234.25.52:48919?upmbps=1000&downmbps=1000&auth=dongtaiwang.com&insecure=1&peer=bing.com&alpn=h3#HYSTERIA-UDPUS-173.234.25.52:48919
-
 hysteria2://sysadmin.sysadmin@148.135.43.253:446?insecure=1&sni=ss.aslirico3212.nyc.mn#HYSTERIA-UDPUS-148.135.43.253:446hysteria://8.217.86.232:7539?upmbps=50&downmbps=100&auth=de08f485-8f8c-4316-9e80-6e7ecdf91d45&insecure=1&alpn=h3#HYSTERIA-UDPHK-8.217.86.232:7539
 
 hysteria2://sysadmin.sysadmin@148.135.59.9:446?insecure=1#HYSTERIA-UDPUS-148.135.59.9:446
@@ -7279,8 +7241,6 @@ hysteria2://sysadmin.sysadmin@148.135.59.9:446?insecure=1#HYSTERIA-UDPUS-148.135
 hysteria2://sysadmin.sysadmin@152.67.234.151:444?insecure=1&sni=mg2.wtn.wang#HYSTERIA-UDPUS-152.67.234.151:444
 
 hysteria2://sysadmin.sysadmin@154.12.61.72:2053?insecure=1&sni=hk1.helima.net#HYSTERIA-UDPHK-154.12.61.72:2053
-
-hysteria2://sysadmin.sysadmin@154.12.61.72:2053?insecure=1&sni=hk1.helima.net#HYSTERIA-UDPHK-154.12.61.72:2053hysteria://173.234.25.52:20164?upmbps=50&downmbps=100&auth=Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F&insecure=1&peer=telegramEUT-VPN.ddns.net&alpn=h3#HYSTERIA-UDPUS-173.234.25.52:20164
 
 hysteria2://sysadmin.sysadmin@154.201.76.131:444?insecure=1&sni=ss.wodeyumingliao.top#HYSTERIA-UDPUS-154.201.76.131:444
 

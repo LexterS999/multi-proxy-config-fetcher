@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-01-20T12:42:35.669450+00:00",
+  "timestamp": "2025-01-20T12:51:00.001159+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/RaymondHarris971/ssrsub/master/9a075bdee5.txt",
@@ -121,16 +121,16 @@
       "enabled": true,
       "metrics": {
         "total_configs": 10,
-        "valid_configs": 3,
-        "unique_configs": 3,
+        "valid_configs": 1,
+        "unique_configs": 1,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 47.5,
+        "overall_score": 42.5,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 2,
+          "hysteria2://": 0,
           "vless://": 0,
           "vmess://": 1,
           "ss://": 0,
@@ -1339,13 +1339,13 @@
       "url": "https://raw.githubusercontent.com/Space-00/V2ray-configs/refs/heads/main/config.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 313,
+        "total_configs": 314,
         "valid_configs": 61,
         "unique_configs": 61,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 44.87,
+        "overall_score": 44.86,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
@@ -1548,11 +1548,11 @@
       "metrics": {
         "total_configs": 1289,
         "valid_configs": 1282,
-        "unique_configs": 994,
+        "unique_configs": 993,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 59.25,
+        "overall_score": 59.23,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
@@ -1732,11 +1732,11 @@
       "metrics": {
         "total_configs": 323,
         "valid_configs": 321,
-        "unique_configs": 17,
+        "unique_configs": 0,
         "avg_response_time": 0,
         "success_count": 0,
         "fail_count": 1,
-        "overall_score": 41.17,
+        "overall_score": 39.85,
         "last_success": null,
         "protocol_counts": {
           "wireguard://": 0,
