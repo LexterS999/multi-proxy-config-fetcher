@@ -79,15 +79,26 @@ class ProxyConfig:
             ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/five_file_vpn.txt"),
             ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/six_file_vpn.txt"),
             ChannelConfig("https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/seven_file_vpn.txt"),
-            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/xhttp-parser/refs/heads/main/output/xhttp.txt")
+            ChannelConfig("https://t.me/s/FreeV2rays"),
+            ChannelConfig("https://t.me/s/v2ray_free_conf"),
+            ChannelConfig("https://t.me/s/PrivateVPNs"),
+            ChannelConfig("https://t.me/s/IP_CF_Config"),
+            ChannelConfig("https://t.me/s/shadowproxy66"),
+            ChannelConfig("https://t.me/s/OutlineReleasedKey"),
+            ChannelConfig("https://t.me/s/prrofile_purple"),
+            ChannelConfig("https://t.me/s/proxy_shadosocks"),
+            ChannelConfig("https://t.me/s/meli_proxyy"),
+            ChannelConfig("https://t.me/s/DirectVPN"),
+            ChannelConfig("https://t.me/s/VmessProtocol"),
+            ChannelConfig("https://t.me/s/V2ray_Alpha"),
         ]
 
         # Global limits for number of configs per protocol
         # Default values: min=3, max=25
         # Adjust these values to control how many configs of each type are collected
         self.PROTOCOL_CONFIG_LIMITS = {
-            "min": 100,    # Minimum configs required per protocol (default: 3)
-            "max": 6000    # Maximum configs allowed per protocol (default: 25)
+            "min": 9,    # Minimum configs required per protocol (default: 3)
+            "max": 25    # Maximum configs allowed per protocol (default: 25)
         }
 
         # Supported proxy protocols configuration
@@ -101,13 +112,13 @@ class ProxyConfig:
             "wireguard://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 1,
+                "priority": 2,
                 "flexible_max": True
             },
             "hysteria2://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 2,
+                "priority": 1,
                 "flexible_max": True,
                 "aliases": ["hy2://"]
             },
@@ -132,24 +143,24 @@ class ProxyConfig:
             "trojan://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 1,
+                "priority": 2,
                 "flexible_max": True
             },
             "tuic://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 2,
+                "priority": 1,
                 "flexible_max": True
             }
         }
 
         # Channel-specific configuration limits
-        self.MIN_CONFIGS_PER_CHANNEL = 3     # Minimum configs required from each channel (default: 3)
-        self.MAX_CONFIGS_PER_CHANNEL = 100000    # Maximum configs allowed from each channel (default: 50)
+        self.MIN_CONFIGS_PER_CHANNEL = 1     # Minimum configs required from each channel (default: 3)
+        self.MAX_CONFIGS_PER_CHANNEL = 50    # Maximum configs allowed from each channel (default: 50)
         self.MAX_CONFIG_AGE_DAYS = 90        # Maximum age of configs in days (default: 90)
-        self.CHANNEL_RETRY_LIMIT = 1        # Maximum retry attempts per channel (default: 10)
+        self.CHANNEL_RETRY_LIMIT = 10        # Maximum retry attempts per channel (default: 10)
         self.CHANNEL_ERROR_THRESHOLD = 0.7   # Error rate threshold to disable channel (default: 0.7 or 70%)
-        self.MIN_PROTOCOL_RATIO = 0.4        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
+        self.MIN_PROTOCOL_RATIO = 0.1        # Minimum ratio of configs per protocol (default: 0.1 or 10%)
 
         # Dynamic protocol adjustment settings
         self.DYNAMIC_PROTOCOL_ADJUSTMENT = True   # Enable/disable dynamic adjustment (default: True)
@@ -160,9 +171,9 @@ class ProxyConfig:
         self.STATS_FILE = 'configs/channel_stats.json'    # Path to save channel stats
         
         # HTTP request settings
-        self.MAX_RETRIES = 1            # Maximum number of retry attempts (default: 10)
-        self.RETRY_DELAY = 1            # Delay between retries in seconds (default: 15)
-        self.REQUEST_TIMEOUT = 1        # Request timeout in seconds (default: 60)
+        self.MAX_RETRIES = 10            # Maximum number of retry attempts (default: 10)
+        self.RETRY_DELAY = 15            # Delay between retries in seconds (default: 15)
+        self.REQUEST_TIMEOUT = 60        # Request timeout in seconds (default: 60)
         
         # HTTP request headers (default User-Agent and other headers)
         self.HEADERS = {
