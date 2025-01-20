@@ -7,8 +7,15 @@ from urllib.parse import unquote, urlparse
 class ConfigValidator:
     @staticmethod
     def sanitize_ascii(text: str) -> str:
-        """Удаляет все не-ASCII символы и лишние пробелы"""
-        return re.sub(r'\s+', '', text.encode('ascii', 'ignore').decode('ascii'))
+        """Полная очистка текста от нестандартных символов и пробелов"""
+        # Удаление эмодзи и специфических Unicode символов
+        text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
+        # Удаление управляющих символов
+        text = re.sub(r'[\x00-\x08\x0B-\x1F\x7F-\x9F]', '', text)
+        # Удаление не-ASCII символов и лишних пробелов
+        text = text.encode('ascii', 'ignore').decode('ascii')
+        text = re.sub(r'\s+', '', text)
+        return text.strip()
 
     @staticmethod
     def decode_base64_text(text: str) -> str:
@@ -35,11 +42,8 @@ class ConfigValidator:
             s = unquote(s)
             s = ConfigValidator.sanitize_ascii(s)
             s = s.replace('-', '+').replace('_', '/')
-            
-            # Корректное вычисление необходимого паддинга
             pad_len = (4 - (len(s) % 4)) % 4
             s += '=' * pad_len
-            
             return base64.urlsafe_b64decode(s)
         except Exception as e:
             return None
@@ -61,23 +65,14 @@ class ConfigValidator:
         try:
             if not config.startswith('vmess://'):
                 return False
-                
             cleaned = ConfigValidator.clean_vmess_config(config)
             base64_part = cleaned[8:]
-            
             decoded_bytes = ConfigValidator.decode_base64_url(base64_part)
             if not decoded_bytes:
                 return False
-                
-            decoded_str = decoded_bytes.decode('utf-8', 'ignore')
-            
-            # Проверка валидности JSON
-            json.loads(decoded_str)
+            json.loads(decoded_bytes.decode('utf-8', 'ignore'))
             return True
-            
-        except json.JSONDecodeError:
-            return False
-        except Exception as e:
+        except:
             return False
 
     @staticmethod
@@ -119,7 +114,6 @@ class ConfigValidator:
             next_proto_pos = len(clean_text)
             found_proto = None
             
-            # Поиск ближайшего протокола
             for proto in protocols:
                 pos = clean_text.find(proto, current_pos)
                 if 0 <= pos < next_proto_pos:
@@ -127,13 +121,11 @@ class ConfigValidator:
                     found_proto = proto
             
             if found_proto:
-                # Добавление конфига между текущей позицией и найденным протоколом
                 if current_pos < next_proto_pos:
                     candidate = clean_text[current_pos:next_proto_pos]
                     if any(candidate.startswith(p) for p in protocols):
                         configs.append(candidate.strip())
                 
-                # Поиск конца текущего конфига
                 end_pos = len(clean_text)
                 for proto in protocols:
                     pos = clean_text.find(proto, next_proto_pos + len(found_proto))
@@ -155,8 +147,6 @@ class ConfigValidator:
 
     @staticmethod
     def is_valid_config(config: str) -> bool:
-        if not config:
-            return False
         protocols = [
             'vmess://', 'vless://', 'ss://', 'trojan://',
             'hysteria2://', 'hy2://', 'wireguard://',
@@ -178,8 +168,6 @@ class ConfigValidator:
             if protocol in ['trojan://', 'hysteria2://', 'hy2://', 'wireguard://']:
                 parsed = urlparse(clean_config)
                 return bool(parsed.netloc and '@' in parsed.netloc)
-            if protocol == 'ssconf://':
-                return True
-            return False
+            return protocol == 'ssconf://'
         except:
             return False
