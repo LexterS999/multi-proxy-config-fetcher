@@ -52,18 +52,24 @@ class ProxyConfig:
         # List of source URLs to fetch proxy configs from
         # Add or remove channels here. Each ChannelConfig takes a URL and enabled status (default: True)
         self.SOURCE_URLS = [
-            ChannelConfig("https://t.me/s/FreeV2rays"),
-            ChannelConfig("https://t.me/s/v2ray_free_conf"),
-            ChannelConfig("https://t.me/s/PrivateVPNs"),
-            ChannelConfig("https://t.me/s/IP_CF_Config"),
-            ChannelConfig("https://t.me/s/shadowproxy66"),
-            ChannelConfig("https://t.me/s/OutlineReleasedKey"),
-            ChannelConfig("https://t.me/s/prrofile_purple"),
-            ChannelConfig("https://t.me/s/proxy_shadosocks"),
-            ChannelConfig("https://t.me/s/meli_proxyy"),
-            ChannelConfig("https://t.me/s/DirectVPN"),
-            ChannelConfig("https://t.me/s/VmessProtocol"),
-            ChannelConfig("https://t.me/s/V2ray_Alpha"),
+            ChannelConfig("https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/main/V2RAY_SUB.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/actives.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/tuic.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vless.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Configs_TLS.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Config_TLS_base64.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/tuic"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/reality"),
+            ChannelConfig("https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/protocols/vless"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/vlessbase64"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/tuicbase64"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/submerge/converted.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/ws_tls/proxies/wstls_base64"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/Proxy-sorter/main/custom/udp.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/vless")
         ]
 
         # Global limits for number of configs per protocol
@@ -71,7 +77,7 @@ class ProxyConfig:
         # Adjust these values to control how many configs of each type are collected
         self.PROTOCOL_CONFIG_LIMITS = {
             "min": 9,    # Minimum configs required per protocol (default: 3)
-            "max": 9000    # Maximum configs allowed per protocol (default: 25)
+            "max": 6000    # Maximum configs allowed per protocol (default: 25)
         }
 
         # Supported proxy protocols configuration
@@ -85,7 +91,7 @@ class ProxyConfig:
             "wireguard://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 2,
+                "priority": 1,
                 "flexible_max": True
             },
             "hysteria2://": {
@@ -98,7 +104,7 @@ class ProxyConfig:
             "vless://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 2,
+                "priority": 1,
                 "flexible_max": True
             },
             "vmess://": {
@@ -116,7 +122,7 @@ class ProxyConfig:
             "trojan://": {
                 "min_configs": self.PROTOCOL_CONFIG_LIMITS["min"],
                 "max_configs": self.PROTOCOL_CONFIG_LIMITS["max"],
-                "priority": 2,
+                "priority": 1,
                 "flexible_max": True
             },
             "tuic://": {
@@ -128,8 +134,8 @@ class ProxyConfig:
         }
 
         # Channel-specific configuration limits
-        self.MIN_CONFIGS_PER_CHANNEL = 1     # Minimum configs required from each channel (default: 3)
-        self.MAX_CONFIGS_PER_CHANNEL = 100000    # Maximum configs allowed from each channel (default: 50)
+        self.MIN_CONFIGS_PER_CHANNEL = 10     # Minimum configs required from each channel (default: 3)
+        self.MAX_CONFIGS_PER_CHANNEL = 10000    # Maximum configs allowed from each channel (default: 50)
         self.MAX_CONFIG_AGE_DAYS = 90        # Maximum age of configs in days (default: 90)
         self.CHANNEL_RETRY_LIMIT = 1        # Maximum retry attempts per channel (default: 10)
         self.CHANNEL_ERROR_THRESHOLD = 0.7   # Error rate threshold to disable channel (default: 0.7 or 70%)
