@@ -26,21 +26,21 @@
         <text x="140" y="550" text-anchor="end" class="row">hysteria2.txt</text>
         <text x="660" y="550" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="580" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="580" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="600" text-anchor="end" class="row">wstls_base64</text>
-        <text x="660" y="600" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="630" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="630" width="324.7" height="30" fill="#eab308" rx="5"/>
+        <text x="660" y="600" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="630" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="630" width="324.6" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="650" text-anchor="end" class="row">udp.txt</text>
-        <text x="660" y="650" text-anchor="start" class="score">64.9% (S:0%)</text><rect x="150" y="680" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="680" width="304.3" height="30" fill="#eab308" rx="5"/>
+        <text x="660" y="650" text-anchor="start" class="score">64.9% (S:0%)</text><rect x="150" y="680" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="680" width="302.8" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="700" text-anchor="end" class="row">vless</text>
-        <text x="660" y="700" text-anchor="start" class="score">60.9% (S:0%)</text><rect x="150" y="730" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="730" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="700" text-anchor="start" class="score">60.6% (S:0%)</text><rect x="150" y="730" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="730" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="750" text-anchor="end" class="row">mix-security-re</text>
-        <text x="660" y="750" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="780" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="780" width="248.95" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="750" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="780" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="780" width="235.04999999999998" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="800" text-anchor="end" class="row">mix-security-tl</text>
-        <text x="660" y="800" text-anchor="start" class="score">49.8% (S:0%)</text><rect x="150" y="830" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="830" width="75.0" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="800" text-anchor="start" class="score">47.0% (S:0%)</text><rect x="150" y="830" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="830" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="850" text-anchor="end" class="row">mix-network-xh</text>
-        <text x="660" y="850" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="880" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="880" width="81.6" height="30" fill="#ef4444" rx="5"/>
+        <text x="660" y="850" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="880" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="880" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="900" text-anchor="end" class="row">mix-network-gr</text>
-        <text x="660" y="900" text-anchor="start" class="score">16.3% (S:0%)</text><rect x="150" y="930" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="930" width="325.0" height="30" fill="#eab308" rx="5"/>
+        <text x="660" y="900" text-anchor="start" class="score">15.0% (S:0%)</text><rect x="150" y="930" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="930" width="325.0" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="950" text-anchor="end" class="row">one_file_vpn.txt</text>
-        <text x="660" y="950" text-anchor="start" class="score">65.0% (S:0%)</text><rect x="150" y="980" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="980" width="299.7" height="30" fill="#eab308" rx="5"/>
+        <text x="660" y="950" text-anchor="start" class="score">65.0% (S:0%)</text><rect x="150" y="980" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="980" width="299.3" height="30" fill="#eab308" rx="5"/>
         <text x="140" y="1000" text-anchor="end" class="row">two_file_vpn.txt</text>
         <text x="660" y="1000" text-anchor="start" class="score">59.9% (S:0%)</text><rect x="150" y="1030" width="500" height="30" fill="#eee" rx="5"/><rect x="150" y="1030" width="75.0" height="30" fill="#ef4444" rx="5"/>
         <text x="140" y="1050" text-anchor="end" class="row">hysteria</text>
