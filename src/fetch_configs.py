@@ -3,7 +3,7 @@ import os
 import time
 import json
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Optional, Set
 import requests
 from bs4 import BeautifulSoup
@@ -67,10 +67,26 @@ class ConfigFetcher:
         configs = []
         
         response = self.fetch_with_retry(https_url)
-        if response and response.text.strip().startswith('ss://'):
-            configs.append(response.text.strip())
+        if response and response.text.strip():
+            text = response.text.strip()
+            if self.validator.is_base64(text):
+                decoded = self.validator.decode_base64_text(text)
+                if decoded:
+                    text = decoded
+            
+            if text.startswith('ss://'):
+                configs.append(text)
+            else:
+                configs.extend(self.validator.split_configs(text))
             
         return configs
+
+    def check_and_decode_base64(self, text: str) -> str:
+        if self.validator.is_base64(text):
+            decoded = self.validator.decode_base64_text(text)
+            if decoded:
+                return decoded
+        return text
 
     def fetch_configs_from_source(self, channel: ChannelConfig) -> List[str]:
         configs: List[str] = []
@@ -101,7 +117,7 @@ class ConfigFetcher:
             
             sorted_messages = sorted(
                 messages,
-                key=lambda message: self.extract_date_from_message(message) or datetime.min,
+                key=lambda message: self.extract_date_from_message(message) or datetime.min.replace(tzinfo=timezone.utc),
                 reverse=True
             )
             
@@ -114,24 +130,55 @@ class ConfigFetcher:
                     continue
                 
                 text = message.text
-                for config in text.split():
-                    if config.startswith('ssconf://'):
-                        ssconf_configs = self.fetch_ssconf_configs(config)
+                text_parts = text.split()
+                
+                for part in text_parts:
+                    part = part.strip()
+                    if not part:
+                        continue
+                        
+                    if part.startswith('ssconf://'):
+                        ssconf_configs = self.fetch_ssconf_configs(part)
                         configs.extend(ssconf_configs)
                         channel.metrics.total_configs += len(ssconf_configs)
+                    else:
+                        decoded_part = self.check_and_decode_base64(part)
+                        if decoded_part != part:
+                            found_configs = self.validator.split_configs(decoded_part)
+                            channel.metrics.total_configs += len(found_configs)
+                            configs.extend(found_configs)
                 
                 found_configs = self.validator.split_configs(text)
                 channel.metrics.total_configs += len(found_configs)
-                
-                for config in found_configs:
-                    configs.extend(self.process_config(config, channel))
+                configs.extend(found_configs)
         else:
             text = response.text
+            text_parts = text.split()
+            
+            for part in text_parts:
+                part = part.strip()
+                if not part:
+                    continue
+                    
+                decoded_part = self.check_and_decode_base64(part)
+                if decoded_part != part:
+                    found_configs = self.validator.split_configs(decoded_part)
+                    channel.metrics.total_configs += len(found_configs)
+                    configs.extend(found_configs)
+            
             found_configs = self.validator.split_configs(text)
             channel.metrics.total_configs += len(found_configs)
-            
-            for config in found_configs:
-                configs.extend(self.process_config(config, channel))
+            configs.extend(found_configs)
+        
+        configs = list(set(configs))
+        
+        for config in configs[:]:
+            for protocol in self.config.SUPPORTED_PROTOCOLS:
+                if config.startswith(protocol):
+                    processed_configs = self.process_config(config, channel)
+                    if not processed_configs:
+                        configs.remove(config)
+                    break
         
         if len(configs) >= self.config.MIN_CONFIGS_PER_CHANNEL:
             self.config.update_channel_stats(channel, True, response_time)
@@ -191,7 +238,7 @@ class ConfigFetcher:
     def is_config_valid(self, config_text: str, date: Optional[datetime]) -> bool:
         if not date:
             return True
-        cutoff_date = datetime.now(date.tzinfo) - timedelta(days=self.config.MAX_CONFIG_AGE_DAYS)
+        cutoff_date = datetime.now(timezone.utc) - timedelta(days=self.config.MAX_CONFIG_AGE_DAYS)
         return date >= cutoff_date
 
     def balance_protocols(self, configs: List[str]) -> List[str]:
@@ -254,7 +301,7 @@ def save_configs(configs: List[str], config: ProxyConfig):
     try:
         os.makedirs(os.path.dirname(config.OUTPUT_FILE), exist_ok=True)
         with open(config.OUTPUT_FILE, 'w', encoding='utf-8') as f:
-            header = """//profile-title: base64:8J+RvUFub255bW91cyhNLlAuQy5GKQ==
+            header = """//profile-title: base64:8J+RvUFub255bW91cy3wnZWP
 //profile-update-interval: 1
 //subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
 //support-url: https://t.me/BXAMbot
@@ -271,7 +318,7 @@ def save_configs(configs: List[str], config: ProxyConfig):
 def save_channel_stats(config: ProxyConfig):
     try:
         stats = {
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
             'channels': []
         }
         
@@ -287,7 +334,7 @@ def save_channel_stats(config: ProxyConfig):
                     'success_count': channel.metrics.success_count,
                     'fail_count': channel.metrics.fail_count,
                     'overall_score': round(channel.metrics.overall_score, 2),
-                    'last_success': channel.metrics.last_success_time.isoformat() if channel.metrics.last_success_time else None,
+                    'last_success': channel.metrics.last_success_time.replace(tzinfo=timezone.utc).isoformat() if channel.metrics.last_success_time else None,
                     'protocol_counts': channel.metrics.protocol_counts
                 }
             }
@@ -309,7 +356,7 @@ def main():
         
         if configs:
             save_configs(configs, config)
-            logger.info(f"Successfully processed {len(configs)} configs at {datetime.now()}")
+            logger.info(f"Successfully processed {len(configs)} configs at {datetime.now(timezone.utc)}")
             
             for protocol, count in fetcher.protocol_counts.items():
                 logger.info(f"{protocol}: {count} configs")
