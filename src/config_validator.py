@@ -7,13 +7,23 @@ from urllib.parse import unquote, urlparse
 class ConfigValidator:
     @staticmethod
     def decode_base64_text(text: str) -> str:
-        return base64.b64decode(text).decode('utf-8')
+        try:
+            # Автоматическое добавление паддинга при необходимости
+            missing_padding = len(text) % 4
+            if missing_padding:
+                text += '=' * (4 - missing_padding)
+            return base64.b64decode(text).decode('utf-8')
+        except Exception as e:
+            print(f"Base64 decode error: {str(e)}")
+            return ""
 
     @staticmethod
     def is_base64(s: str) -> bool:
         try:
-            s = s.rstrip('=')
-            return bool(re.match(r'^[A-Za-z0-9+/\-_]*$', s))
+            s = s.strip()
+            # Проверяем длину и допустимые символы с учётом паддинга
+            return (len(s) % 4 == 0 and 
+                    re.fullmatch(r'[A-Za-z0-9+/]+={0,2}', s) is not None)
         except:
             return False
 
@@ -21,18 +31,21 @@ class ConfigValidator:
     def decode_base64_url(s: str) -> Optional[bytes]:
         try:
             s = s.replace('-', '+').replace('_', '/')
-            padding = 4 - (len(s) % 4)
-            if padding != 4:
-                s += '=' * padding
-            return base64.b64decode(s)
-        except:
+            # Добавляем паддинг с учётом URL-safe формата
+            pad = len(s) % 4
+            if pad:
+                s += '=' * (4 - pad)
+            return base64.urlsafe_b64decode(s)
+        except Exception as e:
+            print(f"URL-safe Base64 decode error: {str(e)}")
             return None
 
     @staticmethod
     def clean_vmess_config(config: str) -> str:
-        if "vmess://" in config:
+        if config.startswith("vmess://"):
             base64_part = config[8:]
-            base64_clean = re.split(r'[^A-Za-z0-9+/=_-]', base64_part)[0]
+            # Сохраняем паддинг при очистке
+            base64_clean = re.split(r'[^A-Za-z0-9+/=_-]', base64_part, 1)[0]
             return f"vmess://{base64_clean}"
         return config
 
@@ -47,13 +60,15 @@ class ConfigValidator:
         try:
             if not config.startswith('vmess://'):
                 return False
-            base64_part = config[8:]
+            cleaned_config = ConfigValidator.clean_vmess_config(config)
+            base64_part = cleaned_config[8:]
             decoded = ConfigValidator.decode_base64_url(base64_part)
             if decoded:
                 json.loads(decoded)
                 return True
             return False
-        except:
+        except Exception as e:
+            print(f"VMESS config error: {str(e)}")
             return False
 
     @staticmethod
@@ -86,7 +101,8 @@ class ConfigValidator:
 
     @staticmethod
     def split_configs(text: str) -> List[str]:
-        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
+        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 
+                    'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
         configs = []
         current_pos = 0
         text_length = len(text)
@@ -111,15 +127,16 @@ class ConfigValidator:
                 next_protocol_pos = text_length
                 
                 for protocol in protocols:
-                    pos = text.find(protocol, next_config_start + len(matching_protocol))
+                    pos = text.find(protocol, current_pos + len(matching_protocol))
                     if pos != -1 and pos < next_protocol_pos:
                         next_protocol_pos = pos
                 
-                current_config = text[next_config_start:next_protocol_pos].strip()
+                current_config = text[current_pos:next_protocol_pos].strip()
                 if matching_protocol == "vmess://":
                     current_config = ConfigValidator.clean_vmess_config(current_config)
                 elif matching_protocol == "hy2://":
                     current_config = ConfigValidator.normalize_hysteria2_protocol(current_config)
+                
                 if ConfigValidator.is_valid_config(current_config):
                     configs.append(current_config)
                 
@@ -131,18 +148,17 @@ class ConfigValidator:
 
     @staticmethod
     def clean_config(config: str) -> str:
-        config = re.sub(r'[\U0001F300-\U0001F9FF]', '', config)
-        config = re.sub(r'[\x00-\x08\x0B-\x1F\x7F-\x9F]', '', config)
-        config = re.sub(r'[^\S\r\n]+', ' ', config)
-        config = config.strip()
-        return config
+        config = re.sub(r'[\U0001F300-\U0001F9FF]', '', config)  # Удаляем эмодзи
+        config = re.sub(r'[\x00-\x08\x0B-\x1F\x7F-\x9F]', '', config)  # Удаляем управляющие символы
+        config = re.sub(r'[^\S\r\n]+', ' ', config)  # Заменяем множественные пробелы
+        return config.strip()
 
     @staticmethod
     def is_valid_config(config: str) -> bool:
         if not config:
             return False
-            
-        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
+        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 
+                    'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
         return any(config.startswith(p) for p in protocols)
 
     @classmethod
@@ -165,5 +181,6 @@ class ConfigValidator:
             elif protocol == 'ssconf://':
                 return True
             return False
-        except:
+        except Exception as e:
+            print(f"Validation error for {config}: {str(e)}")
             return False
