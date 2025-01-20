@@ -8,15 +8,18 @@ class ConfigValidator:
     @staticmethod
     def sanitize_ascii(text: str) -> str:
         """Полная очистка текста от нестандартных символов и пробелов"""
-        # Удаление эмодзи и специфических Unicode символов
         text = re.sub(r'[\U0001F300-\U0001F9FF]', '', text)
-        # Удаление управляющих символов
         text = re.sub(r'[\x00-\x08\x0B-\x1F\x7F-\x9F]', '', text)
-        # Удаление не-ASCII символов и лишних пробелов
         text = text.encode('ascii', 'ignore').decode('ascii')
         text = re.sub(r'\s+', '', text)
         return text.strip()
 
+    # Добавляем обратно метод clean_config как псевдоним
+    @staticmethod
+    def clean_config(config: str) -> str:
+        return ConfigValidator.sanitize_ascii(config)
+
+    # Все остальные методы остаются без изменений
     @staticmethod
     def decode_base64_text(text: str) -> str:
         try:
