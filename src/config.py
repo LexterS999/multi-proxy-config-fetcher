@@ -52,7 +52,6 @@ class ProxyConfig:
         # List of source URLs to fetch proxy configs from
         # Add or remove channels here. Each ChannelConfig takes a URL and enabled status (default: True)
         self.SOURCE_URLS = [
-            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
             ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
             ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Configs_TLS.txt"),
             ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt"),
