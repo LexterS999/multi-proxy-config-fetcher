@@ -6,6 +6,9 @@ from urllib.parse import unquote, urlparse
 
 class ConfigValidator:
     @staticmethod
+    def decode_base64_text(self, text: str) -> str:
+        import base64
+        return base64.b64decode(text).decode('utf-8')
     def is_base64(s: str) -> bool:
         try:
             s = s.rstrip('=')
