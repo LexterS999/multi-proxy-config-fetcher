@@ -2,7 +2,7 @@ name: Update Proxy Configs
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -36,28 +36,6 @@ jobs:
       run: python src/fetch_configs.py
       continue-on-error: true
     
-    - name: Generate charts and reports
-      run: python src/generate_charts.py
-      
-    - name: Convert configs to sing-box format
-      run: python src/config_to_singbox.py
-    
-    - name: Update README timestamps and stats
-      run: |
-        timestamp=$(date +%s)
-        
-        sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README.md
-        sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README.md
-        
-        sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_FA.md
-        sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_FA.md
-        
-        sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_CN.md
-        sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_CN.md
-        
-        sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_RU.md
-        sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_RU.md
-    
     - name: Setup Git
       run: |
         git config --global user.name 'github-actions[bot]'
@@ -66,13 +44,5 @@ jobs:
     - name: Commit and push changes
       run: |
         git add configs/proxy_configs.txt
-        git add configs/singbox_configs.json
-        git add configs/channel_stats.json
-        git add assets/channel_stats_chart.svg
-        git add assets/performance_report.html
-        git add README.md
-        git add README_FA.md
-        git add README_CN.md
-        git add README_RU.md
         git commit -m "Update proxy configs, stats and reports" || echo "No changes to commit"
         git push
