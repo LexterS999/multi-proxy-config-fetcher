@@ -26,7 +26,7 @@ class ConfigFetcher:
     def __init__(self, config: ProxyConfig):
         self.config = config
         self.validator = ConfigValidator()
-        # Учтём только разрешённые протоколы
+        # Используем только разрешённые протоколы
         self.protocol_counts: Dict[str, int] = {p: 0 for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS}
         self.seen_configs: Set[str] = set()
         self.channel_protocol_counts: Dict[str, Dict[str, int]] = {}
@@ -65,8 +65,6 @@ class ConfigFetcher:
                     decoded = self.validator.decode_base64_text(text)
                     if decoded:
                         text = decoded
-                # Если строка начинается с разрешённого протокола, добавляем как есть,
-                # иначе разбиваем на части.
                 if any(text.startswith(p) for p in ALLOWED_PROTOCOLS):
                     configs.append(text)
                 else:
@@ -105,8 +103,17 @@ class ConfigFetcher:
 
         try:
             response_text = await response.text()
+        except (aiohttp.ClientConnectionError, aiohttp.ServerDisconnectedError, aiohttp.ClientPayloadError) as e:
+            logger.warning(f"Connection closed when reading response text from {channel.url}: {e}. Trying alternative method.")
+            try:
+                raw_bytes = await response.read()
+                response_text = raw_bytes.decode('utf-8', errors='replace')
+            except Exception as e2:
+                logger.error(f"Alternative method failed for {channel.url}: {e2}")
+                self.config.update_channel_stats(channel, False)
+                return configs
         except Exception as e:
-            logger.error(f"Error reading response text from {channel.url}: {e}")
+            logger.error(f"Unexpected error reading response text from {channel.url}: {e}")
             self.config.update_channel_stats(channel, False)
             return configs
 
@@ -162,7 +169,6 @@ class ConfigFetcher:
 
         configs = list(set(configs))
         for conf in configs[:]:
-            # Обработка только разрешённых протоколов
             for protocol in [p for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS]:
                 if conf.startswith(protocol):
                     processed_configs = self.process_config(conf, channel)
@@ -194,7 +200,6 @@ class ConfigFetcher:
                         config = config.replace(alias, protocol, 1)
                         break
             if protocol_match:
-                # Для разрешённых протоколов применяем чистку и валидацию
                 clean_config = self.validator.clean_config(config)
                 if self.validator.validate_protocol_config(clean_config, protocol):
                     channel.metrics.valid_configs += 1
