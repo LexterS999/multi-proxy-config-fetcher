@@ -6,7 +6,7 @@ import io
 import os
 from typing import Dict, List, Optional
 from datetime import datetime
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from dataclasses import dataclass
 import logging
 from math import inf
@@ -14,9 +14,40 @@ from math import inf
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Допустимые протоколы для сохранения в итоговый файл
+# =============================================================================
+# ГЛОБАЛЬНЫЕ КОНСТАНТЫ ДЛЯ НАСТРОЕК
+# =============================================================================
+# Настройки загрузки профилей по давности
+PROFILE_MIN_AGE_DAYS = 1     # минимальный возраст профиля (дней)
+PROFILE_MAX_AGE_DAYS = 30    # максимальный возраст профиля (дней)
+
+# Настройки количества профилей из одного источника
+PROFILE_MIN_COUNT = 10       # минимальное число профилей, которое требуется получить
+PROFILE_MAX_COUNT = 1000     # максимальное число профилей, которое можно получить
+
+# Настройки контроля качества источника
+MAX_SOURCE_CHECKS = 30       # после 30 проверок источник с низким баллом будет отключён
+MIN_ACCEPTABLE_SCORE = 50    # пороговое значение общего балла для источника
+
+# Весовые коэффициенты для расчёта балла источника
+RELIABILITY_WEIGHT = 35      # вес надёжности (на основе успехов/провалов)
+QUANTITY_WEIGHT = 25         # вес количества полученных записей
+DIVERSITY_WEIGHT = 25        # вес разнообразия протоколов
+FREQUENCY_WEIGHT = 15        # вес частоты обновлений
+
+# Дополнительные настройки нормировки
+DESIRED_TOTAL_CONFIGS = PROFILE_MAX_COUNT  # нормировочное значение для количества записей
+TOTAL_POSSIBLE_PROTOCOLS = 4                 # число разрешённых протоколов (vless, trojan, tuic, hy2)
+
+# Допустимые протоколы для сохранения в конечный файл
 ALLOWED_PROTOCOLS = ["vless://", "trojan://", "tuic://", "hy2://"]
 
+# Файл для сохранения итоговых конфигураций
+OUTPUT_CONFIG_FILE = "configs/proxy_configs.txt"
+
+# =============================================================================
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+# =============================================================================
 def country_code_to_emoji(country_code: str) -> str:
     """
     Преобразует двухбуквенный код страны в эмодзи флага.
@@ -26,7 +57,7 @@ def country_code_to_emoji(country_code: str) -> str:
 
 def compute_profile_score(config: str) -> float:
     """
-    Комплексная функция скоринга для профиля.
+    Базовая функция скоринга для отдельного профиля.
     Базовый балл зависит от протокола, дополнительно учитывается длина строки.
     """
     base_scores = {
@@ -41,16 +72,19 @@ def compute_profile_score(config: str) -> float:
              return base + extra
     return 0.0
 
+# =============================================================================
+# КЛАССЫ ДЛЯ МЕТРИК И КОНФИГУРАЦИИ
+# =============================================================================
 @dataclass
 class ChannelMetrics:
-    total_configs: int = 0
-    valid_configs: int = 0
-    unique_configs: int = 0
+    total_configs: int = 0        # общее число строк (попыток)
+    valid_configs: int = 0        # число валидных записей (соответствующих фильтру)
+    unique_configs: int = 0       # число уникальных протоколов (разнообразие)
     avg_response_time: float = 0.0
     last_success_time: Optional[datetime] = None
     fail_count: int = 0
     success_count: int = 0
-    overall_score: float = 0.0
+    overall_score: float = 0.0    # итоговый балл источника
     protocol_counts: Dict[str, int] = None
 
     def __post_init__(self):
@@ -65,34 +99,45 @@ class ChannelConfig:
         self.is_telegram = bool(re.match(r'^https://t\.me/s/', self.url))
         self.error_count = 0
         self.last_check_time = None
-        # Таймаут запроса, может регулироваться в ProxyConfig
         self.request_timeout = 60
+        # Счётчик проверок для контроля качества источника
+        self.check_count = 0
 
     def _validate_url(self, url: str) -> str:
         if not url or not isinstance(url, str):
             raise ValueError("Invalid URL")
         url = url.strip()
-        # Разрешены протоколы http, https и ssconf
         if not url.startswith(('http://', 'https://', 'ssconf://')):
             raise ValueError("Invalid URL protocol")
         return url
 
     def calculate_overall_score(self):
+        """
+        Вычисляет общий балл источника с учётом:
+         - Надёжности (успешных/неудачных попыток)
+         - Количества полученных записей
+         - Разнообразия протоколов (сравнивая число уникальных протоколов с максимально возможным)
+         - Частоты обновлений (на основе времени последнего успешного обновления)
+        Итоговый балл лежит в диапазоне 0-100.
+        """
         try:
             total_attempts = max(1, self.metrics.success_count + self.metrics.fail_count)
-            reliability_score = (self.metrics.success_count / total_attempts) * 35
-            
-            total_configs = max(1, self.metrics.total_configs)
-            quality_score = (self.metrics.valid_configs / total_configs) * 25
-            
-            valid_configs = max(1, self.metrics.valid_configs)
-            uniqueness_score = (self.metrics.unique_configs / valid_configs) * 25
-            
-            response_score = 15
-            if self.metrics.avg_response_time > 0:
-                response_score = max(0, min(15, 15 * (1 - (self.metrics.avg_response_time / 10))))
-            
-            self.metrics.overall_score = round(reliability_score + quality_score + uniqueness_score + response_score, 2)
+            reliability_score = (self.metrics.success_count / total_attempts) * RELIABILITY_WEIGHT
+
+            # Балл за количество: нормируем по DESIRED_TOTAL_CONFIGS
+            quantity_score = min(QUANTITY_WEIGHT, (self.metrics.total_configs / DESIRED_TOTAL_CONFIGS) * QUANTITY_WEIGHT)
+
+            # Балл за разнообразие протоколов
+            diversity_score = (self.metrics.unique_configs / TOTAL_POSSIBLE_PROTOCOLS) * DIVERSITY_WEIGHT
+
+            # Балл за частоту обновлений: чем быстрее обновление, тем выше балл.
+            if self.metrics.last_success_time:
+                delta = (datetime.now() - self.metrics.last_success_time).total_seconds()
+                frequency_score = max(0, FREQUENCY_WEIGHT * (3600 / (delta + 3600)))
+            else:
+                frequency_score = 0
+
+            self.metrics.overall_score = round(reliability_score + quantity_score + diversity_score + frequency_score, 2)
         except Exception as e:
             logger.error(f"Error calculating score for {self.url}: {str(e)}")
             self.metrics.overall_score = 0.0
@@ -128,12 +173,9 @@ class ProxyConfig:
         self.SUPPORTED_PROTOCOLS = self._initialize_protocols()
         self._initialize_settings()
         self._set_smart_limits()
-        # Параметры для настройки скачивания профилей по давности и количеству
-        self.PROFILE_MIN_AGE_DAYS = 1
-        self.PROFILE_MAX_AGE_DAYS = 30
-        self.PROFILE_MIN_COUNT = 10
-        self.PROFILE_MAX_COUNT = 1000
-        self.OUTPUT_FILE = 'configs/proxy_configs.txt'
+
+        # Используем глобальную константу для OUTPUT_CONFIG_FILE
+        self.OUTPUT_FILE = OUTPUT_CONFIG_FILE
         self.STATS_FILE = 'configs/channel_stats.json'
 
     def _initialize_protocols(self) -> Dict:
@@ -206,21 +248,16 @@ class ProxyConfig:
         try:
             if not url:
                 raise ValueError("Empty URL")
-                
             url = url.strip()
             if url.startswith('ssconf://'):
                 url = url.replace('ssconf://', 'https://', 1)
-                
             parsed = urlparse(url)
             if not parsed.scheme or not parsed.netloc:
                 raise ValueError("Invalid URL format")
-                
             path = parsed.path.rstrip('/')
-            
             if parsed.netloc.startswith('t.me/s/'):
                 channel_name = parsed.path.strip('/').lower()
                 return f"telegram:{channel_name}"
-                
             return f"{parsed.scheme}://{parsed.netloc}{path}"
         except Exception as e:
             logger.error(f"URL normalization error: {str(e)}")
@@ -230,12 +267,10 @@ class ProxyConfig:
         try:
             seen_urls = {}
             unique_configs = []
-            
             for config in channel_configs:
                 if not isinstance(config, ChannelConfig):
                     logger.warning(f"Invalid config skipped: {config}")
                     continue
-                    
                 try:
                     normalized_url = self._normalize_url(config.url)
                     if normalized_url not in seen_urls:
@@ -243,12 +278,10 @@ class ProxyConfig:
                         unique_configs.append(config)
                 except Exception:
                     continue
-            
             if not unique_configs:
                 self.save_empty_config_file()
                 logger.error("No valid sources found. Empty config file created.")
                 return []
-                
             return unique_configs
         except Exception as e:
             logger.error(f"Error removing duplicate URLs: {str(e)}")
@@ -259,16 +292,12 @@ class ProxyConfig:
         try:
             if not protocol:
                 return False
-                
             protocol = protocol.lower().strip()
-            
             if protocol in self.SUPPORTED_PROTOCOLS:
                 return self.SUPPORTED_PROTOCOLS[protocol].get("enabled", False)
-                
             for main_protocol, info in self.SUPPORTED_PROTOCOLS.items():
                 if protocol in info.get("aliases", []):
                     return info.get("enabled", False)
-                    
             return False
         except Exception:
             return False
@@ -286,18 +315,16 @@ class ProxyConfig:
             channel.metrics.last_success_time = datetime.now()
         else:
             channel.metrics.fail_count += 1
-        
         if response_time > 0:
             if channel.metrics.avg_response_time == 0:
                 channel.metrics.avg_response_time = response_time
             else:
                 channel.metrics.avg_response_time = (channel.metrics.avg_response_time * 0.7) + (response_time * 0.3)
-        
         channel.calculate_overall_score()
-        
-        if channel.metrics.overall_score < 25:
+        # Если канал получает низкий балл после 30 проверок, отключаем его
+        if channel.check_count >= MAX_SOURCE_CHECKS and channel.metrics.overall_score < MIN_ACCEPTABLE_SCORE:
             channel.enabled = False
-        
+            logger.info(f"Channel {channel.url} disabled after {channel.check_count} checks (score: {channel.metrics.overall_score}).")
         if not any(c.enabled for c in self.SOURCE_URLS):
             self.save_empty_config_file()
             logger.error("All channels are disabled. Empty config file created.")
@@ -305,7 +332,6 @@ class ProxyConfig:
     def adjust_protocol_limits(self, channel: ChannelConfig):
         if self.use_maximum_power:
             return
-            
         for protocol in channel.metrics.protocol_counts:
             if protocol in self.SUPPORTED_PROTOCOLS:
                 current_count = channel.metrics.protocol_counts[protocol]
@@ -316,15 +342,22 @@ class ProxyConfig:
                     )
 
     def save_empty_config_file(self) -> bool:
+        """
+        Сохраняет пустой файл в OUTPUT_CONFIG_FILE.
+        Используем глобальную константу, чтобы избежать ошибки, если self оказался строкой.
+        """
         try:
-            with open(self.OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            os.makedirs(os.path.dirname(OUTPUT_CONFIG_FILE), exist_ok=True)
+            with open(OUTPUT_CONFIG_FILE, 'w', encoding='utf-8') as f:
                 f.write("")
             return True
-        except Exception:
+        except Exception as e:
+            logger.error(f"Error saving empty configs: {str(e)}")
             return False
 
-# Асинхронные функции для скачивания, обработки, фильтрации и валидации профилей
-
+# =============================================================================
+# АСИНХРОННЫЕ ФУНКЦИИ ДЛЯ СКАЧИВАНИЯ И ОБРАБОТКИ ПРОФИЛЕЙ
+# =============================================================================
 async def download_ip2location_db(session: aiohttp.ClientSession, url: str = "https://download.ip2location.com/lite/IP2LOCATION-LITE-DB1.BIN.ZIP") -> Optional[str]:
     """
     Асинхронно скачивает ZIP-архив базы IP2Location, извлекает BIN-файл и сохраняет его во временный файл.
@@ -351,10 +384,9 @@ async def download_ip2location_db(session: aiohttp.ClientSession, url: str = "ht
 async def process_channel(channel: ChannelConfig, ip_db, session: aiohttp.ClientSession, semaphore: asyncio.Semaphore, proxy_config: ProxyConfig) -> List[Dict]:
     """
     Асинхронно скачивает и обрабатывает профили из одного канала.
-    Фильтрует по допустимым протоколам, выполняет валидацию и назначает скоринг.
+    Фильтрация производится по допустимым протоколам, обновляются метрики канала и вычисляется скоринг.
     """
     proxies = []
-    allowed_protocols = ALLOWED_PROTOCOLS
     async with semaphore:
         try:
             async with session.get(channel.url, timeout=channel.request_timeout) as response:
@@ -362,25 +394,33 @@ async def process_channel(channel: ChannelConfig, ip_db, session: aiohttp.Client
                 logger.info(f"Downloaded content from {channel.url}")
         except Exception as e:
             logger.error(f"Error downloading channel {channel.url}: {str(e)}")
+            channel.check_count += 1
+            channel.metrics.fail_count += 1
+            channel.calculate_overall_score()
             return proxies
 
-    # Если источник с raw.githubusercontent.com – применяется оптимизированная обработка.
-    is_fast_source = "raw.githubusercontent.com" in channel.url
     lines = text.splitlines()
-    
     for line in lines:
         line = line.strip()
         if not line:
             continue
-        # Фильтрация: оставляем только записи с допустимыми протоколами.
-        if not any(line.startswith(proto) for proto in allowed_protocols):
+
+        channel.metrics.total_configs += 1
+
+        # Фильтрация: оставляем только записи, начинающиеся с разрешённых протоколов
+        if not any(line.startswith(proto) for proto in ALLOWED_PROTOCOLS):
             continue
 
-        # Вычисление скоринга профиля.
+        channel.metrics.valid_configs += 1
+        for proto in ALLOWED_PROTOCOLS:
+            if line.startswith(proto):
+                channel.metrics.protocol_counts[proto] = channel.metrics.protocol_counts.get(proto, 0) + 1
+                break
+        channel.metrics.unique_configs = len(channel.metrics.protocol_counts)
+
         score = compute_profile_score(line)
-        profile_name = "Unknown"
-        
-        # Попытка извлечь IP-адрес из строки (упрощённое предположение).
+        flag = "Unknown"
+
         ip_match = re.search(r'(\d{1,3}(?:\.\d{1,3}){3})', line)
         if ip_match and ip_db:
             ip_address = ip_match.group(1)
@@ -388,21 +428,39 @@ async def process_channel(channel: ChannelConfig, ip_db, session: aiohttp.Client
                 rec = ip_db.get_all(ip_address)
                 country_name = rec.country_long if hasattr(rec, 'country_long') else "Unknown"
                 country_code = rec.country_short if hasattr(rec, 'country_short') else ""
-                flag = country_code_to_emoji(country_code) if country_code else ""
-                profile_name = f"{flag} | {country_name}"
-                # Дополнительный бонус к скорингу при наличии корректной информации о стране.
+                if country_code:
+                    flag = country_code_to_emoji(country_code)
+                # Дополнительный бонус за наличие корректной информации о стране
                 score += 10
             except Exception as e:
                 logger.error(f"IP2Location lookup failed for IP {ip_address}: {str(e)}")
         else:
-            # Если IP не найден, немного снижаем балл.
             score -= 5
-        
+
+        # В словаре сохраняем исходную строку, а также вычисленный балл и флаг
         proxies.append({
             "config": line,
-            "name": profile_name,
+            "flag": flag,
             "score": score
         })
+
+    channel.check_count += 1
+    if proxies:
+        channel.metrics.success_count += 1
+        channel.metrics.last_success_time = datetime.now()
+    else:
+        channel.metrics.fail_count += 1
+
+    channel.calculate_overall_score()
+
+    if channel.check_count >= MAX_SOURCE_CHECKS and channel.metrics.overall_score < MIN_ACCEPTABLE_SCORE:
+        channel.enabled = False
+        logger.info(f"Channel {channel.url} disabled after {channel.check_count} checks (score: {channel.metrics.overall_score}).")
+
+    multiplier = 1 + (channel.metrics.overall_score / 100)
+    for p in proxies:
+        p['score'] *= multiplier
+
     return proxies
 
 async def process_all_channels(channels: List[ChannelConfig], ip_db, proxy_config: ProxyConfig) -> List[Dict]:
@@ -420,18 +478,33 @@ async def process_all_channels(channels: List[ChannelConfig], ip_db, proxy_confi
 
 def save_final_configs(proxies: List[Dict], output_file: str):
     """
-    Сохраняет итоговые прокси-конфигурации, отсортированные по убыванию балла (от наиболее полного к менее заполненному).
+    Сохраняет итоговые прокси-конфигурации.
+    Формат записи:
+    <config URL>#<flag emoji> | <Protocol> | <Protocol Type>
+    Все записи сохраняются в OUTPUT_CONFIG_FILE.
     """
     proxies_sorted = sorted(proxies, key=lambda x: x['score'], reverse=True)
     try:
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
     except Exception:
         pass
-    with open(output_file, 'w', encoding='utf-8') as f:
-        for proxy in proxies_sorted:
-            # Формат записи: конфигурация - имя профиля (с флагом и названием страны)
-            f.write(f"{proxy['config']} - {proxy['name']}\n")
-    logger.info(f"Final configurations saved to {output_file}")
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for proxy in proxies_sorted:
+                config = proxy['config']
+                # Извлекаем флаг из сохранённого значения (либо "Unknown")
+                flag = proxy.get("flag", "Unknown")
+                # Извлекаем протокол (до "://")
+                parsed = urlparse(config)
+                proto = parsed.scheme if parsed.scheme else "Unknown"
+                # Извлекаем тип протокола из параметра "type" (если есть)
+                qs = parse_qs(parsed.query)
+                proto_type = qs.get("type", ["Unknown"])[0]
+                final_line = f"{config}#{flag} | {proto} | {proto_type}\n"
+                f.write(final_line)
+        logger.info(f"Final configurations saved to {output_file}")
+    except Exception as e:
+        logger.error(f"Error saving configs: {str(e)}")
 
 def main():
     proxy_config = ProxyConfig()
@@ -439,7 +512,6 @@ def main():
     
     async def runner():
         async with aiohttp.ClientSession(headers=proxy_config.HEADERS) as session:
-            # Скачивание и инициализация базы IP2Location для временного использования.
             ip_db_path = await download_ip2location_db(session)
             ip_db = None
             if ip_db_path:
@@ -454,7 +526,6 @@ def main():
             proxies = await process_all_channels(channels, ip_db, proxy_config)
             save_final_configs(proxies, proxy_config.OUTPUT_FILE)
             
-            # Очистка временного файла базы IP2Location
             if ip_db_path and os.path.exists(ip_db_path):
                 os.remove(ip_db_path)
                 logger.info("Temporary IP2Location database file removed.")
