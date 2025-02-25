@@ -1,4 +1,3 @@
-import re
 import os
 import json
 import logging
@@ -7,8 +6,10 @@ import aiohttp
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Optional, Set
 from bs4 import BeautifulSoup
+from urllib.parse import urlparse, parse_qs
+
 from config import ProxyConfig, ChannelConfig
-from config_validator import ConfigValidator
+from config_validator import ConfigValidator, ALLOWED_PROTOCOLS
 
 logging.basicConfig(
     level=logging.INFO,
@@ -25,7 +26,8 @@ class ConfigFetcher:
     def __init__(self, config: ProxyConfig):
         self.config = config
         self.validator = ConfigValidator()
-        self.protocol_counts: Dict[str, int] = {p: 0 for p in config.SUPPORTED_PROTOCOLS}
+        # Учтём только разрешённые протоколы
+        self.protocol_counts: Dict[str, int] = {p: 0 for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS}
         self.seen_configs: Set[str] = set()
         self.channel_protocol_counts: Dict[str, Dict[str, int]] = {}
 
@@ -59,7 +61,8 @@ class ConfigFetcher:
                     decoded = self.validator.decode_base64_text(text)
                     if decoded:
                         text = decoded
-                if text.startswith('ss://'):
+                # Допускаем только если начинается с разрешённого протокола (например, ss:// не входит в ALLOWED_PROTOCOLS)
+                if any(text.startswith(p) for p in ALLOWED_PROTOCOLS):
                     configs.append(text)
                 else:
                     configs.extend(self.validator.split_configs(text))
@@ -74,11 +77,11 @@ class ConfigFetcher:
 
     async def fetch_configs_from_source(self, channel: ChannelConfig, session: aiohttp.ClientSession) -> List[str]:
         configs: List[str] = []
-        # Обнуление статистики для данного канала
+        # Сброс статистики канала
         channel.metrics.total_configs = 0
         channel.metrics.valid_configs = 0
         channel.metrics.unique_configs = 0
-        channel.metrics.protocol_counts = {p: 0 for p in self.config.SUPPORTED_PROTOCOLS}
+        channel.metrics.protocol_counts = {p: 0 for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS}
 
         start_time = datetime.now()
 
@@ -147,12 +150,13 @@ class ConfigFetcher:
             configs.extend(found_configs)
 
         configs = list(set(configs))
-        for config in configs[:]:
-            for protocol in self.config.SUPPORTED_PROTOCOLS:
-                if config.startswith(protocol):
-                    processed_configs = self.process_config(config, channel)
+        for conf in configs[:]:
+            # Обработка только разрешённых протоколов
+            for protocol in [p for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS]:
+                if conf.startswith(protocol):
+                    processed_configs = self.process_config(conf, channel)
                     if not processed_configs:
-                        configs.remove(config)
+                        configs.remove(conf)
                     break
 
         if len(configs) >= self.config.MIN_CONFIGS_PER_CHANNEL:
@@ -165,9 +169,9 @@ class ConfigFetcher:
 
     def process_config(self, config: str, channel: ChannelConfig) -> List[str]:
         processed_configs = []
-        if config.startswith('hy2://'):
+        if config.startswith('hy2://') or config.startswith('hysteria2://'):
             config = self.validator.normalize_hysteria2_protocol(config)
-        for protocol in self.config.SUPPORTED_PROTOCOLS:
+        for protocol in [p for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS]:
             aliases = self.config.SUPPORTED_PROTOCOLS[protocol].get('aliases', [])
             protocol_match = False
             if config.startswith(protocol):
@@ -179,17 +183,16 @@ class ConfigFetcher:
                         config = config.replace(alias, protocol, 1)
                         break
             if protocol_match:
-                if protocol == "vmess://":
-                    config = self.validator.clean_vmess_config(config)
-                clean_config = self.validator.clean_config(config)
-                if self.validator.validate_protocol_config(clean_config, protocol):
-                    channel.metrics.valid_configs += 1
-                    channel.metrics.protocol_counts[protocol] = channel.metrics.protocol_counts.get(protocol, 0) + 1
-                    if clean_config not in self.seen_configs:
-                        channel.metrics.unique_configs += 1
-                        self.seen_configs.add(clean_config)
-                        processed_configs.append(clean_config)
-                        self.protocol_counts[protocol] += 1
+                if protocol == "vless://" or protocol == "trojan://" or protocol == "tuic://" or protocol == "hy2://":
+                    clean_config = self.validator.clean_config(config)
+                    if self.validator.validate_protocol_config(clean_config, protocol):
+                        channel.metrics.valid_configs += 1
+                        channel.metrics.protocol_counts[protocol] = channel.metrics.protocol_counts.get(protocol, 0) + 1
+                        if clean_config not in self.seen_configs:
+                            channel.metrics.unique_configs += 1
+                            self.seen_configs.add(clean_config)
+                            processed_configs.append(clean_config)
+                            self.protocol_counts[protocol] += 1
                 break
         return processed_configs
 
@@ -209,13 +212,13 @@ class ConfigFetcher:
         return date >= cutoff_date
 
     def balance_protocols(self, configs: List[str]) -> List[str]:
-        protocol_configs: Dict[str, List[str]] = {p: [] for p in self.config.SUPPORTED_PROTOCOLS}
-        for config in configs:
-            if config.startswith('hy2://'):
-                config = self.validator.normalize_hysteria2_protocol(config)
-            for protocol in self.config.SUPPORTED_PROTOCOLS:
-                if config.startswith(protocol):
-                    protocol_configs[protocol].append(config)
+        protocol_configs: Dict[str, List[str]] = {p: [] for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS}
+        for conf in configs:
+            if conf.startswith('hy2://') or conf.startswith('hysteria2://'):
+                conf = self.validator.normalize_hysteria2_protocol(conf)
+            for protocol in [p for p in self.config.SUPPORTED_PROTOCOLS if p in ALLOWED_PROTOCOLS]:
+                if conf.startswith(protocol):
+                    protocol_configs[protocol].append(conf)
                     break
         total_configs = sum(len(lst) for lst in protocol_configs.values())
         if total_configs == 0:
@@ -226,13 +229,13 @@ class ConfigFetcher:
             key=lambda x: (self.config.SUPPORTED_PROTOCOLS[x[0]]["priority"], len(x[1])),
             reverse=True
         )
-        for protocol, protocol_config_list in sorted_protocols:
+        for protocol, protocol_list in sorted_protocols:
             protocol_info = self.config.SUPPORTED_PROTOCOLS[protocol]
-            if len(protocol_config_list) >= protocol_info["min_configs"]:
-                max_configs = min(protocol_info["max_configs"], len(protocol_config_list))
-                balanced_configs.extend(protocol_config_list[:max_configs])
-            elif protocol_info.get("flexible_max") and len(protocol_config_list) > 0:
-                balanced_configs.extend(protocol_config_list)
+            if len(protocol_list) >= protocol_info["min_configs"]:
+                max_configs = min(protocol_info["max_configs"], len(protocol_list))
+                balanced_configs.extend(protocol_list[:max_configs])
+            elif protocol_info.get("flexible_max") and len(protocol_list) > 0:
+                balanced_configs.extend(protocol_list)
         return balanced_configs
 
     async def fetch_all_configs(self, session: aiohttp.ClientSession) -> List[str]:
@@ -251,21 +254,6 @@ class ConfigFetcher:
         return []
 
 
-async def main():
-    config = ProxyConfig()
-    fetcher = ConfigFetcher(config)
-    async with aiohttp.ClientSession(headers=config.HEADERS) as session:
-        configs = await fetcher.fetch_all_configs(session)
-    if configs:
-        save_configs(configs, config)
-        logger.info(f"Successfully processed {len(configs)} configs at {datetime.now(timezone.utc)}")
-        for protocol, count in fetcher.protocol_counts.items():
-            logger.info(f"{protocol}: {count} configs")
-    else:
-        logger.error("No valid configs found!")
-    save_channel_stats(config)
-
-
 def save_configs(configs: List[str], config: ProxyConfig):
     try:
         os.makedirs(os.path.dirname(config.OUTPUT_FILE), exist_ok=True)
@@ -278,8 +266,15 @@ def save_configs(configs: List[str], config: ProxyConfig):
 
 """
             f.write(header)
+            # Формат записи: <config URL>#<flag emoji> | <Protocol> | <Protocol Type>
             for conf in configs:
-                f.write(conf + '\n\n')
+                parsed = urlparse(conf)
+                proto = parsed.scheme if parsed.scheme else "Unknown"
+                qs = parse_qs(parsed.query)
+                proto_type = qs.get("type", ["Unknown"])[0]
+                flag = "Unknown"  # Флаг будет определён основным скриптом с IP2Location
+                final_line = f"{conf}#{flag} | {proto} | {proto_type}\n\n"
+                f.write(final_line)
         logger.info(f"Successfully saved {len(configs)} configs to {config.OUTPUT_FILE}")
     except Exception as e:
         logger.error(f"Error saving configs: {e}")
@@ -314,6 +309,21 @@ def save_channel_stats(config: ProxyConfig):
         logger.info(f"Channel statistics saved to {config.STATS_FILE}")
     except Exception as e:
         logger.error(f"Error saving channel statistics: {e}")
+
+
+async def main():
+    config = ProxyConfig()
+    fetcher = ConfigFetcher(config)
+    async with aiohttp.ClientSession(headers=config.HEADERS) as session:
+        configs = await fetcher.fetch_all_configs(session)
+    if configs:
+        save_configs(configs, config)
+        logger.info(f"Successfully processed {len(configs)} configs at {datetime.now(timezone.utc)}")
+        for protocol, count in fetcher.protocol_counts.items():
+            logger.info(f"{protocol}: {count} configs")
+    else:
+        logger.error("No valid configs found!")
+    save_channel_stats(config)
 
 
 if __name__ == '__main__':
