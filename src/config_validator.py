@@ -3,40 +3,58 @@ import base64
 import json
 from typing import Optional, Tuple, List
 from urllib.parse import unquote, urlparse
+import logging
+
+logger = logging.getLogger(__name__)
 
 class ConfigValidator:
     @staticmethod
     def is_base64(s: str) -> bool:
+        """
+        Проверяет, содержит ли строка только допустимые символы Base64 (без учета отступающих символов).
+        """
         try:
             s = s.rstrip('=')
             return bool(re.match(r'^[A-Za-z0-9+/\-_]*$', s))
-        except:
+        except Exception as e:
+            logger.error(f"Error in is_base64: {e}")
             return False
 
     @staticmethod
     def decode_base64_url(s: str) -> Optional[bytes]:
+        """
+        Декодирует строку, закодированную в Base64 (с учетом URL-safe преобразований).
+        """
         try:
             s = s.replace('-', '+').replace('_', '/')
             padding = 4 - (len(s) % 4)
             if padding != 4:
                 s += '=' * padding
             return base64.b64decode(s)
-        except:
+        except Exception as e:
+            logger.error(f"Error decoding base64 URL: {e}")
             return None
 
     @staticmethod
     def decode_base64_text(text: str) -> Optional[str]:
+        """
+        Декодирует текст, если он является корректной строкой Base64.
+        """
         try:
             if ConfigValidator.is_base64(text):
                 decoded = ConfigValidator.decode_base64_url(text)
                 if decoded:
                     return decoded.decode('utf-8')
             return None
-        except:
+        except Exception as e:
+            logger.error(f"Error decoding base64 text: {e}")
             return None
 
     @staticmethod
     def clean_vmess_config(config: str) -> str:
+        """
+        Очищает vmess-конфигурацию, оставляя только корректную Base64-часть.
+        """
         if "vmess://" in config:
             base64_part = config[8:]
             base64_clean = re.split(r'[^A-Za-z0-9+/=_-]', base64_part)[0]
@@ -45,12 +63,18 @@ class ConfigValidator:
 
     @staticmethod
     def normalize_hysteria2_protocol(config: str) -> str:
+        """
+        Преобразует префикс 'hy2://' в 'hysteria2://' для единообразия.
+        """
         if config.startswith('hy2://'):
             return config.replace('hy2://', 'hysteria2://', 1)
         return config
 
     @staticmethod
     def is_vmess_config(config: str) -> bool:
+        """
+        Проверяет корректность vmess-конфигурации путем декодирования Base64 и попытки парсинга JSON.
+        """
         try:
             if not config.startswith('vmess://'):
                 return False
@@ -60,27 +84,38 @@ class ConfigValidator:
                 json.loads(decoded)
                 return True
             return False
-        except:
+        except Exception as e:
+            logger.error(f"Error validating vmess config: {e}")
             return False
 
     @staticmethod
     def is_tuic_config(config: str) -> bool:
+        """
+        Проверяет корректность конфигурации протокола tuic по наличию требуемых элементов URL.
+        """
         try:
             if config.startswith('tuic://'):
                 parsed = urlparse(config)
                 return bool(parsed.netloc and ':' in parsed.netloc)
             return False
-        except:
+        except Exception as e:
+            logger.error(f"Error validating tuic config: {e}")
             return False
 
     @staticmethod
     def convert_ssconf_to_https(url: str) -> str:
+        """
+        Преобразует префикс ssconf:// в https://.
+        """
         if url.startswith('ssconf://'):
             return url.replace('ssconf://', 'https://', 1)
         return url
 
     @staticmethod
     def is_base64_config(config: str) -> Tuple[bool, str]:
+        """
+        Определяет, является ли конфигурация Base64-закодированной, и возвращает имя протокола без разделителя "://".
+        """
         protocols = ['vmess://', 'vless://', 'ss://', 'tuic://']
         for protocol in protocols:
             if config.startswith(protocol):
@@ -93,60 +128,63 @@ class ConfigValidator:
 
     @staticmethod
     def check_base64_content(text: str) -> Optional[str]:
+        """
+        Декодирует Base64-содержимое и возвращает текст, если в нем присутствует один из известных протоколов.
+        """
         try:
             decoded_text = ConfigValidator.decode_base64_text(text)
             if decoded_text:
-                protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
+                protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 
+                             'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
                 for protocol in protocols:
                     if protocol in decoded_text:
                         return decoded_text
             return None
-        except:
+        except Exception as e:
+            logger.error(f"Error checking base64 content: {e}")
             return None
 
     @staticmethod
     def split_configs(text: str) -> List[str]:
+        """
+        Разбивает исходный текст на отдельные конфигурационные строки, учитывая возможное Base64-кодирование.
+        """
         configs = []
         lines = text.split('\n')
-        
         for line in lines:
             line = line.strip()
             if not line:
                 continue
-                
+
+            # Если строка представляет собой Base64-кодированное содержимое, декодируем его
             if ConfigValidator.is_base64(line):
                 decoded_content = ConfigValidator.check_base64_content(line)
                 if decoded_content:
                     text = decoded_content
-                    
-            protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
+
+            protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 
+                         'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
             current_pos = 0
             text_length = len(text)
-            
             while current_pos < text_length:
                 next_config_start = text_length
                 matching_protocol = None
-                
                 for protocol in protocols:
                     protocol_pos = text.find(protocol, current_pos)
                     if protocol_pos != -1 and protocol_pos < next_config_start:
                         next_config_start = protocol_pos
                         matching_protocol = protocol
-                
                 if matching_protocol:
                     if current_pos < next_config_start and configs:
                         current_config = text[current_pos:next_config_start].strip()
                         if ConfigValidator.is_valid_config(current_config):
                             configs.append(current_config)
-                    
                     current_pos = next_config_start
                     next_protocol_pos = text_length
-                    
                     for protocol in protocols:
                         pos = text.find(protocol, next_config_start + len(matching_protocol))
                         if pos != -1 and pos < next_protocol_pos:
                             next_protocol_pos = pos
-                    
                     current_config = text[next_config_start:next_protocol_pos].strip()
                     if matching_protocol == "vmess://":
                         current_config = ConfigValidator.clean_vmess_config(current_config)
@@ -154,31 +192,38 @@ class ConfigValidator:
                         current_config = ConfigValidator.normalize_hysteria2_protocol(current_config)
                     if ConfigValidator.is_valid_config(current_config):
                         configs.append(current_config)
-                    
                     current_pos = next_protocol_pos
                 else:
                     break
-                    
         return configs
 
     @staticmethod
     def clean_config(config: str) -> str:
+        """
+        Очищает конфигурационную строку от эмодзи, управляющих символов и лишних пробелов.
+        """
         config = re.sub(r'[\U0001F300-\U0001F9FF]', '', config)
         config = re.sub(r'[\x00-\x08\x0B-\x1F\x7F-\x9F]', '', config)
         config = re.sub(r'[^\S\r\n]+', ' ', config)
-        config = config.strip()
-        return config
+        return config.strip()
 
     @staticmethod
     def is_valid_config(config: str) -> bool:
+        """
+        Определяет, начинается ли строка с одного из известных протоколов.
+        """
         if not config:
             return False
-            
-        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
+        protocols = ['vmess://', 'vless://', 'ss://', 'trojan://', 
+                     'hysteria2://', 'hy2://', 'wireguard://', 'tuic://', 'ssconf://']
         return any(config.startswith(p) for p in protocols)
 
     @classmethod
     def validate_protocol_config(cls, config: str, protocol: str) -> bool:
+        """
+        Производит валидацию конфигурации в зависимости от используемого протокола.
+        Для некоторых протоколов дополнительно проверяется корректность Base64-секции.
+        """
         try:
             if protocol in ['vmess://', 'vless://', 'ss://', 'tuic://']:
                 if protocol == 'vmess://':
@@ -197,5 +242,6 @@ class ConfigValidator:
             elif protocol == 'ssconf://':
                 return True
             return False
-        except:
+        except Exception as e:
+            logger.error(f"Error validating protocol config: {e}")
             return False
