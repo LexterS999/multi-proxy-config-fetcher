@@ -33,7 +33,7 @@ jobs:
         mkdir -p configs
     
     - name: Run config fetcher
-      run: python src/fetch_configs.py
+      run: python src/config.py
       continue-on-error: true
     
     - name: Setup Git
