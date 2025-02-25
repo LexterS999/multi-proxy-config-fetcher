@@ -55,13 +55,18 @@ class ConfigFetcher:
         configs = []
         response = await self.fetch_with_retry(https_url, session)
         if response:
-            text = (await response.text()).strip()
+            try:
+                text = (await response.text()).strip()
+            except Exception as e:
+                logger.error(f"Error reading ssconf response from {https_url}: {e}")
+                return configs
             if text:
                 if self.validator.is_base64(text):
                     decoded = self.validator.decode_base64_text(text)
                     if decoded:
                         text = decoded
-                # Допускаем только если начинается с разрешённого протокола (например, ss:// не входит в ALLOWED_PROTOCOLS)
+                # Если строка начинается с разрешённого протокола, добавляем как есть,
+                # иначе разбиваем на части.
                 if any(text.startswith(p) for p in ALLOWED_PROTOCOLS):
                     configs.append(text)
                 else:
@@ -98,7 +103,13 @@ class ConfigFetcher:
             self.config.update_channel_stats(channel, False)
             return configs
 
-        response_text = await response.text()
+        try:
+            response_text = await response.text()
+        except Exception as e:
+            logger.error(f"Error reading response text from {channel.url}: {e}")
+            self.config.update_channel_stats(channel, False)
+            return configs
+
         response_time = (datetime.now() - start_time).total_seconds()
 
         if channel.is_telegram:
@@ -183,16 +194,16 @@ class ConfigFetcher:
                         config = config.replace(alias, protocol, 1)
                         break
             if protocol_match:
-                if protocol == "vless://" or protocol == "trojan://" or protocol == "tuic://" or protocol == "hy2://":
-                    clean_config = self.validator.clean_config(config)
-                    if self.validator.validate_protocol_config(clean_config, protocol):
-                        channel.metrics.valid_configs += 1
-                        channel.metrics.protocol_counts[protocol] = channel.metrics.protocol_counts.get(protocol, 0) + 1
-                        if clean_config not in self.seen_configs:
-                            channel.metrics.unique_configs += 1
-                            self.seen_configs.add(clean_config)
-                            processed_configs.append(clean_config)
-                            self.protocol_counts[protocol] += 1
+                # Для разрешённых протоколов применяем чистку и валидацию
+                clean_config = self.validator.clean_config(config)
+                if self.validator.validate_protocol_config(clean_config, protocol):
+                    channel.metrics.valid_configs += 1
+                    channel.metrics.protocol_counts[protocol] = channel.metrics.protocol_counts.get(protocol, 0) + 1
+                    if clean_config not in self.seen_configs:
+                        channel.metrics.unique_configs += 1
+                        self.seen_configs.add(clean_config)
+                        processed_configs.append(clean_config)
+                        self.protocol_counts[protocol] += 1
                 break
         return processed_configs
 
@@ -272,7 +283,7 @@ def save_configs(configs: List[str], config: ProxyConfig):
                 proto = parsed.scheme if parsed.scheme else "Unknown"
                 qs = parse_qs(parsed.query)
                 proto_type = qs.get("type", ["Unknown"])[0]
-                flag = "Unknown"  # Флаг будет определён основным скриптом с IP2Location
+                flag = "Unknown"  # Флаг будет определён основным скриптом с использованием IP2Location
                 final_line = f"{conf}#{flag} | {proto} | {proto_type}\n\n"
                 f.write(final_line)
         logger.info(f"Successfully saved {len(configs)} configs to {config.OUTPUT_FILE}")
