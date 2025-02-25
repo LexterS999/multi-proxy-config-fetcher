@@ -148,47 +148,47 @@ class ProxyConfig:
         # Option 1: use_maximum_power = True для максимально возможного числа записей (наивысший приоритет)
         # Option 2: specific_config_count > 0 для задания желаемого количества (по умолчанию: 200)
         # Если use_maximum_power = True, specific_config_count игнорируется.
-        self.use_maximum_power = False
+        self.use_maximum_power = True
         self.specific_config_count = 200
 
-initial_urls = [
-    ChannelConfig("https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/refs/heads/main/server.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
-    ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/main/reality.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/sevcator/5ubscrpt10n/refs/heads/main/protocols/vl.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/sevcator/5ubscrpt10n/refs/heads/main/protocols/tr.txt"),
-    ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/hysteria"),
-    ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/trojan"),
-    ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/tuic"),
-    ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/vless"),
-    ChannelConfig("https://t.me/s/v2ray_free_conf"),
-    ChannelConfig("https://t.me/s/PrivateVPNs"),
-    ChannelConfig("https://t.me/s/IP_CF_Config"),
-    ChannelConfig("https://t.me/s/shadowproxy66"),
-    ChannelConfig("https://t.me/s/OutlineReleasedKey"),
-    ChannelConfig("https://t.me/s/prrofile_purple"),
-    ChannelConfig("https://t.me/s/meli_proxyy"),
-    ChannelConfig("https://t.me/s/DirectVPN"),
-    ChannelConfig("https://t.me/s/VmessProtocol"),
-    ChannelConfig("https://t.me/s/ViProxys"),
-    ChannelConfig("https://t.me/s/heyatserver"),
-    ChannelConfig("https://t.me/s/vpnfail_vless"),
-    ChannelConfig("https://t.me/s/DailyV2RY"),
-    ChannelConfig("https://t.me/s/ShadowsocksM")
-]
+        initial_urls = [
+            ChannelConfig("https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/master/collected-proxies/row-url/all.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/refs/heads/main/server.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/All_Configs_Sub.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/refs/heads/main/VLESS/VL100.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/new-configs-collector/main/protocols/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/lagzian/SS-Collector/main/reality.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/sevcator/5ubscrpt10n/refs/heads/main/protocols/vl.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/sevcator/5ubscrpt10n/refs/heads/main/protocols/tr.txt"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/hysteria"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/trojan"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/tuic"),
+            ChannelConfig("https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/refs/heads/main/sub/vless"),
+            ChannelConfig("https://t.me/s/v2ray_free_conf"),
+            ChannelConfig("https://t.me/s/PrivateVPNs"),
+            ChannelConfig("https://t.me/s/IP_CF_Config"),
+            ChannelConfig("https://t.me/s/shadowproxy66"),
+            ChannelConfig("https://t.me/s/OutlineReleasedKey"),
+            ChannelConfig("https://t.me/s/prrofile_purple"),
+            ChannelConfig("https://t.me/s/meli_proxyy"),
+            ChannelConfig("https://t.me/s/DirectVPN"),
+            ChannelConfig("https://t.me/s/VmessProtocol"),
+            ChannelConfig("https://t.me/s/ViProxys"),
+            ChannelConfig("https://t.me/s/heyatserver"),
+            ChannelConfig("https://t.me/s/vpnfail_vless"),
+            ChannelConfig("https://t.me/s/DailyV2RY"),
+            ChannelConfig("https://t.me/s/ShadowsocksM")
+        ]
 
         self.SOURCE_URLS = self._remove_duplicate_urls(initial_urls)
         self.SUPPORTED_PROTOCOLS = self._initialize_protocols()
         self._initialize_settings()
         self._set_smart_limits()
 
-        # Используем глобальную константу для OUTPUT_CONFIG_FILE
         self.OUTPUT_FILE = OUTPUT_CONFIG_FILE
         self.STATS_FILE = 'configs/channel_stats.json'
+
 
     def _initialize_protocols(self) -> Dict:
         return {
