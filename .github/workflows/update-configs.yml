@@ -53,6 +53,7 @@ jobs:
     
     - name: Commit and push changes
       run: |
+        git pull --rebase
         git add configs/proxy_configs.txt
         git add configs/channel_stats.json
         git add assets/channel_stats_chart.svg
