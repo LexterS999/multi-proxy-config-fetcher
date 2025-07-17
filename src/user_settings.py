@@ -3,13 +3,13 @@
 # List of source URLs to fetch proxy configurations from.
 # Add or remove URLs as needed. All URLs in this list are automatically enabled.
 SOURCE_URLS = [
-    "EuServer",
-    "DailyV2RY",
-    "VlessConfig",
-    "iP_CF",
-    "PrivateVPNs",
-    "meli_proxyy",
-    "ShadowProxy66",
+    "https://t.me/s/EuServer",
+    "https://t.me/s/DailyV2RY",
+    "https://t.me/s/VlessConfig",
+    "https://t.me/s/iP_CF",
+    "https://t.me/s/PrivateVPNs",
+    "https://t.me/s/meli_proxyy",
+    "https://t.me/s/ShadowProxy66",
 ]
 
 # Set to True to fetch the maximum possible number of configurations.
