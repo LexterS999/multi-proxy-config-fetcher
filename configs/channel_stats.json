@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-19T23:27:49.360087+00:00",
+  "timestamp": "2025-07-20T02:26:17.744949+00:00",
   "channels": [
     {
       "url": "https://t.me/s/EuServer",
@@ -31,11 +31,11 @@
         "total_configs": 171,
         "valid_configs": 116,
         "unique_configs": 112,
-        "avg_response_time": 0.42,
+        "avg_response_time": 0.3,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 90.46,
-        "last_success": "2025-07-19T23:27:37.285522+00:00",
+        "overall_score": 90.65,
+        "last_success": "2025-07-20T02:26:06.110433+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -146,11 +146,11 @@
         "total_configs": 62,
         "valid_configs": 44,
         "unique_configs": 44,
-        "avg_response_time": 0.38,
+        "avg_response_time": 0.29,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 92.17,
-        "last_success": "2025-07-19T23:27:49.359229+00:00",
+        "overall_score": 92.31,
+        "last_success": "2025-07-20T02:26:17.744167+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
